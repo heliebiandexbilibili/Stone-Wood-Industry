@@ -29,10 +29,10 @@ public class ModItems {
     public static final Item SMOOTH_STONE_LEGGINGS = register("smooth_stone_leggings", new SmoothStoneArmorItem(ModArmorMaterials.SMOOTH_STONE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item SMOOTH_STONE_BOOTS = register("smooth_stone_boots", new SmoothStoneArmorItem(ModArmorMaterials.SMOOTH_STONE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item SMOOTH_STONE_PICKAXE = register("smooth_stone_pickaxe", new PickaxeItem(ModToolMaterials.SMOOTH_STONE, 2, 3.0F, new FabricItemSettings()));
-    public static final Item SMOOTH_STONE_SWORD = register("smooth_stone_sword", new PickaxeItem(ModToolMaterials.SMOOTH_STONE, 7, 3.0F, new FabricItemSettings()));
-    public static final Item SMOOTH_STONE_HOE = register("smooth_stone_hoe", new PickaxeItem(ModToolMaterials.SMOOTH_STONE, 2, 3.0F, new FabricItemSettings()));
-    public static final Item SMOOTH_STONE_AXE = register("smooth_stone_axe", new PickaxeItem(ModToolMaterials.SMOOTH_STONE, 8, 3.0F, new FabricItemSettings()));
-    public static final Item SMOOTH_STONE_SHOVEL = register("smooth_stone_shovel", new PickaxeItem(ModToolMaterials.SMOOTH_STONE, 2, 3.0F, new FabricItemSettings()));
+    public static final Item SMOOTH_STONE_SWORD = register("smooth_stone_sword", new SwordItem(ModToolMaterials.SMOOTH_STONE, 7, 3.0F, new FabricItemSettings()));
+    public static final Item SMOOTH_STONE_HOE = register("smooth_stone_hoe", new HoeItem(ModToolMaterials.SMOOTH_STONE, 2, 3.0F, new FabricItemSettings()));
+    public static final Item SMOOTH_STONE_AXE = register("smooth_stone_axe", new AxeItem(ModToolMaterials.SMOOTH_STONE, 8, 3.0F, new FabricItemSettings()));
+    public static final Item SMOOTH_STONE_SHOVEL = register("smooth_stone_shovel", new ShovelItem(ModToolMaterials.SMOOTH_STONE, 2, 3.0F, new FabricItemSettings()));
     public static final Item OAK_HELMET = register("oak_helmet", new WoodArmorItem(ModArmorMaterials.OAK, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item OAK_CHESTPLATE = register("oak_chestplate", new WoodArmorItem(ModArmorMaterials.OAK, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item OAK_LEGGINGS = register("oak_leggings", new WoodArmorItem(ModArmorMaterials.OAK, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
