@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:birch_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "# #",
+    "   "
+  ],
+  "result": {
+    "item": "stonewood-industry:birch_helmet"
+  },
+  "show_notification": true
+}

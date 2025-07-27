@@ -1,0 +1,68 @@
+package com.ind.mod.datagenerator;
+
+import com.ind.mod.StoneWoodIndustry;
+import com.ind.mod.block.ModBlocks;
+import com.ind.mod.item.ModItems;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.util.Identifier;
+
+public class ZhCnLanguageGenerator extends FabricLanguageProvider {
+    public ZhCnLanguageGenerator(FabricDataOutput dataOutput) {
+        super(dataOutput, "zh_cn");
+    }
+
+    @Override
+    public void generateTranslations(TranslationBuilder translationBuilder) {
+        translationBuilder.add(ModBlocks.SMOOTH_STONE_PRESSURE_PLATE, "平滑石压力板");
+        translationBuilder.add(ModBlocks.SMOOTH_STONE_STAIRS, "平滑石楼梯");
+        translationBuilder.add(ModBlocks.SMOOTH_STONE_BUTTON, "平滑石按钮");
+        translationBuilder.add(ModItems.STONE_HELMET, "石头头盔");
+        translationBuilder.add(ModItems.STONE_CHESTPLATE, "石头胸甲");
+        translationBuilder.add(ModItems.STONE_LEGGINGS, "石头护腿");
+        translationBuilder.add(ModItems.STONE_BOOTS, "石头靴子");
+        translationBuilder.add(ModItems.SMOOTH_STONE_HELMET, "平滑石头盔");
+        translationBuilder.add(ModItems.SMOOTH_STONE_CHESTPLATE, "平滑石胸甲");
+        translationBuilder.add(ModItems.SMOOTH_STONE_LEGGINGS, "平滑石护腿");
+        translationBuilder.add(ModItems.SMOOTH_STONE_BOOTS, "平滑石靴子");
+        translationBuilder.add(ModItems.SMOOTH_STONE_PICKAXE, "平滑石镐子");
+        translationBuilder.add(ModItems.SMOOTH_STONE_AXE, "平滑石斧头");
+        translationBuilder.add(ModItems.SMOOTH_STONE_HOE, "平滑石锄头");
+        translationBuilder.add(ModItems.SMOOTH_STONE_SHOVEL, "平滑石铲子");
+        translationBuilder.add(ModItems.SMOOTH_STONE_SWORD, "平滑石剑");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone"), "石木工艺：石头制品");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood"), "石木工艺：木头制品");
+        translationBuilder.add(ModItems.OAK_HELMET, "橡木头盔");
+        translationBuilder.add(ModItems.OAK_CHESTPLATE, "橡木胸甲");
+        translationBuilder.add(ModItems.OAK_LEGGINGS, "橡木护腿");
+        translationBuilder.add(ModItems.OAK_BOOTS, "橡木鞋子");
+        translationBuilder.add(ModItems.BIRCH_HELMET, "白桦木头盔");
+        translationBuilder.add(ModItems.BIRCH_CHESTPLATE, "白桦木胸甲");
+        translationBuilder.add(ModItems.BIRCH_LEGGINGS, "白桦木护腿");
+        translationBuilder.add(ModItems.BIRCH_BOOTS, "白桦木鞋子");
+        translationBuilder.add(ModItems.SPRUCE_HELMET, "云杉木头盔");
+        translationBuilder.add(ModItems.SPRUCE_CHESTPLATE, "云杉木胸甲");
+        translationBuilder.add(ModItems.SPRUCE_LEGGINGS, "云杉木护腿");
+        translationBuilder.add(ModItems.SPRUCE_BOOTS, "云杉木鞋子");
+        translationBuilder.add(ModItems.JUNGLE_HELMET, "丛林木头盔");
+        translationBuilder.add(ModItems.JUNGLE_CHESTPLATE, "丛林木胸甲");
+        translationBuilder.add(ModItems.JUNGLE_LEGGINGS, "丛林木护腿");
+        translationBuilder.add(ModItems.JUNGLE_BOOTS, "丛林木鞋子");
+        translationBuilder.add(ModItems.ACACIA_HELMET, "金合欢木头盔");
+        translationBuilder.add(ModItems.ACACIA_CHESTPLATE, "金合欢木胸甲");
+        translationBuilder.add(ModItems.ACACIA_LEGGINGS, "金合欢木护腿");
+        translationBuilder.add(ModItems.ACACIA_BOOTS, "金合欢木鞋子");
+        translationBuilder.add(ModItems.DARK_OAK_HELMET, "深色橡木头盔");
+        translationBuilder.add(ModItems.DARK_OAK_CHESTPLATE, "深色橡木胸甲");
+        translationBuilder.add(ModItems.DARK_OAK_LEGGINGS, "深色橡木护腿");
+        translationBuilder.add(ModItems.DARK_OAK_BOOTS, "深色橡木鞋子");
+        translationBuilder.add(ModItems.MANGROVE_HELMET, "红树头盔");
+        translationBuilder.add(ModItems.MANGROVE_CHESTPLATE, "红树胸甲");
+        translationBuilder.add(ModItems.MANGROVE_LEGGINGS, "红树护腿");
+        translationBuilder.add(ModItems.MANGROVE_BOOTS, "红树鞋子");
+        translationBuilder.add(ModItems.CHERRY_HELMET, "樱花木头盔");
+        translationBuilder.add(ModItems.CHERRY_CHESTPLATE, "樱花木胸甲");
+        translationBuilder.add(ModItems.CHERRY_LEGGINGS, "樱花木护腿");
+        translationBuilder.add(ModItems.CHERRY_BOOTS, "樱花木鞋子");
+    }
+}

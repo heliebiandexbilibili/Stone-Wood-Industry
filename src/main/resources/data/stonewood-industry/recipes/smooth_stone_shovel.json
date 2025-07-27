@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " # ",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:smooth_stone_shovel"
+  },
+  "show_notification": true
+}

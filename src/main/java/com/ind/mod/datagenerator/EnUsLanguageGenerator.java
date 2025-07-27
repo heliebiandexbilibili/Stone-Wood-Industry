@@ -1,0 +1,68 @@
+package com.ind.mod.datagenerator;
+
+import com.ind.mod.StoneWoodIndustry;
+import com.ind.mod.block.ModBlocks;
+import com.ind.mod.item.ModItems;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.util.Identifier;
+
+public class EnUsLanguageGenerator extends FabricLanguageProvider {
+    public EnUsLanguageGenerator(FabricDataOutput dataOutput) {
+        super(dataOutput);
+    }
+
+    @Override
+    public void generateTranslations(TranslationBuilder translationBuilder) {
+        translationBuilder.add(ModBlocks.SMOOTH_STONE_PRESSURE_PLATE, "Smooth Stone Pressure Plate");
+        translationBuilder.add(ModBlocks.SMOOTH_STONE_STAIRS, "Smooth Stone Stairs");
+        translationBuilder.add(ModBlocks.SMOOTH_STONE_BUTTON, "Smooth Stone Button");
+        translationBuilder.add(ModItems.STONE_HELMET, "Stone Helmet");
+        translationBuilder.add(ModItems.STONE_CHESTPLATE, "Stone Chestplate");
+        translationBuilder.add(ModItems.STONE_LEGGINGS, "Stone Leggings");
+        translationBuilder.add(ModItems.STONE_BOOTS, "Stone Boots");
+        translationBuilder.add(ModItems.SMOOTH_STONE_HELMET, "Smooth Stone Helmet");
+        translationBuilder.add(ModItems.SMOOTH_STONE_CHESTPLATE, "Smooth Stone Chestplate");
+        translationBuilder.add(ModItems.SMOOTH_STONE_LEGGINGS, "Smooth Stone Leggings");
+        translationBuilder.add(ModItems.SMOOTH_STONE_BOOTS, "Smooth Stone Boots");
+        translationBuilder.add(ModItems.SMOOTH_STONE_PICKAXE, "Smooth Stone Pickaxe");
+        translationBuilder.add(ModItems.SMOOTH_STONE_AXE, "Smooth Stone Axe");
+        translationBuilder.add(ModItems.SMOOTH_STONE_HOE, "Smooth Stone Hoe");
+        translationBuilder.add(ModItems.SMOOTH_STONE_SHOVEL, "Smooth Stone Shovel");
+        translationBuilder.add(ModItems.SMOOTH_STONE_SWORD, "Smooth Stone Sword");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone"), "Stone Wood Industry: Stone Products");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood"), "Stone Wood Industry: Wood Products");
+        translationBuilder.add(ModItems.OAK_HELMET, "Oak Helmet");
+        translationBuilder.add(ModItems.OAK_CHESTPLATE, "Oak Chestplate");
+        translationBuilder.add(ModItems.OAK_LEGGINGS, "Oak Leggings");
+        translationBuilder.add(ModItems.OAK_BOOTS, "Oak Boots");
+        translationBuilder.add(ModItems.BIRCH_HELMET, "Birch Helmet");
+        translationBuilder.add(ModItems.BIRCH_CHESTPLATE, "Birch Chestplate");
+        translationBuilder.add(ModItems.BIRCH_LEGGINGS, "Birch Leggings");
+        translationBuilder.add(ModItems.BIRCH_BOOTS, "Birch Boots");
+        translationBuilder.add(ModItems.SPRUCE_HELMET, "Spruce Helmet");
+        translationBuilder.add(ModItems.SPRUCE_CHESTPLATE, "Spruce Chestplate");
+        translationBuilder.add(ModItems.SPRUCE_LEGGINGS, "Spruce Leggings");
+        translationBuilder.add(ModItems.SPRUCE_BOOTS, "Spruce Boots");
+        translationBuilder.add(ModItems.JUNGLE_HELMET, "Jungle Helmet");
+        translationBuilder.add(ModItems.JUNGLE_CHESTPLATE, "Jungle Chestplate");
+        translationBuilder.add(ModItems.JUNGLE_LEGGINGS, "Jungle Leggings");
+        translationBuilder.add(ModItems.JUNGLE_BOOTS, "Jungle Boots");
+        translationBuilder.add(ModItems.ACACIA_HELMET, "Acacia Helmet");
+        translationBuilder.add(ModItems.ACACIA_CHESTPLATE, "Acacia Chestplate");
+        translationBuilder.add(ModItems.ACACIA_LEGGINGS, "Acacia Leggings");
+        translationBuilder.add(ModItems.ACACIA_BOOTS, "Acacia Boots");
+        translationBuilder.add(ModItems.DARK_OAK_HELMET, "Dark Oak Helmet");
+        translationBuilder.add(ModItems.DARK_OAK_CHESTPLATE, "Dark Oak Chestplate");
+        translationBuilder.add(ModItems.DARK_OAK_LEGGINGS, "Dark Oak Leggings");
+        translationBuilder.add(ModItems.DARK_OAK_BOOTS, "Dark Oak Boots");
+        translationBuilder.add(ModItems.MANGROVE_HELMET, "Mangrove Helmet");
+        translationBuilder.add(ModItems.MANGROVE_CHESTPLATE, "Mangrove Chestplate");
+        translationBuilder.add(ModItems.MANGROVE_LEGGINGS, "Mangrove Leggings");
+        translationBuilder.add(ModItems.MANGROVE_BOOTS, "Mangrove Boots");
+        translationBuilder.add(ModItems.CHERRY_HELMET, "Cherry Helmet");
+        translationBuilder.add(ModItems.CHERRY_CHESTPLATE, "Cherry Chestplate");
+        translationBuilder.add(ModItems.CHERRY_LEGGINGS, "Cherry Leggings");
+        translationBuilder.add(ModItems.CHERRY_BOOTS, "Cherry Boots");
+    }
+}

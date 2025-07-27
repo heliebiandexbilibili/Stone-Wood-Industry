@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "stonewood-industry:item/smooth_stone_helmet"
+  }
+}

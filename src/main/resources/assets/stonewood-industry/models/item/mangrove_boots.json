@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "stonewood-industry:item/mangrove_boots"
+  }
+}
