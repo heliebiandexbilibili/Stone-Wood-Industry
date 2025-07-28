@@ -76,5 +76,37 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItems.WARPED_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WARPED_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(ModItems.WARPED_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERRACK_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERRACK_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERRACK_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHERRACK_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BASALT_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BASALT_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BASALT_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BASALT_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.END_STONE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.END_STONE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.END_STONE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.END_STONE_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIORITE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIORITE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIORITE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIORITE_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRANITE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRANITE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRANITE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRANITE_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ANDESITE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ANDESITE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ANDESITE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ANDESITE_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OBSIDIAN_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OBSIDIAN_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OBSIDIAN_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OBSIDIAN_BOOTS, Models.GENERATED);
     }
 }

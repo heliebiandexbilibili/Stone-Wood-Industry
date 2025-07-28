@@ -84,5 +84,37 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.WARPED_CHESTPLATE, "Warped Chestplate");
         translationBuilder.add(ModItems.WARPED_LEGGINGS, "Warped Leggings");
         translationBuilder.add(ModItems.WARPED_BOOTS, "Warped Boots");
+        translationBuilder.add(ModItems.NETHERRACK_HELMET, "Dark Oak Helmet");
+        translationBuilder.add(ModItems.NETHERRACK_CHESTPLATE, "Dark Oak Chestplate");
+        translationBuilder.add(ModItems.NETHERRACK_LEGGINGS, "Dark Oak Leggings");
+        translationBuilder.add(ModItems.NETHERRACK_BOOTS, "Dark Oak Boots");
+        translationBuilder.add(ModItems.BASALT_HELMET, "Mangrove Helmet");
+        translationBuilder.add(ModItems.BASALT_CHESTPLATE, "Mangrove Chestplate");
+        translationBuilder.add(ModItems.BASALT_LEGGINGS, "Mangrove Leggings");
+        translationBuilder.add(ModItems.BASALT_BOOTS, "Mangrove Boots");
+        translationBuilder.add(ModItems.END_STONE_HELMET, "End Stone Helmet");
+        translationBuilder.add(ModItems.END_STONE_CHESTPLATE, "End Stone Chestplate");
+        translationBuilder.add(ModItems.END_STONE_LEGGINGS, "End Stone Leggings");
+        translationBuilder.add(ModItems.END_STONE_BOOTS, "End Stone Boots");
+        translationBuilder.add(ModItems.DIORITE_HELMET, "Diorite Helmet");
+        translationBuilder.add(ModItems.DIORITE_CHESTPLATE, "Diorite Chestplate");
+        translationBuilder.add(ModItems.DIORITE_LEGGINGS, "Diorite Leggings");
+        translationBuilder.add(ModItems.DIORITE_BOOTS, "Diorite Boots");
+        translationBuilder.add(ModItems.GRANITE_HELMET, "Granite Helmet");
+        translationBuilder.add(ModItems.GRANITE_CHESTPLATE, "Granite Chestplate");
+        translationBuilder.add(ModItems.GRANITE_LEGGINGS, "Granite Leggings");
+        translationBuilder.add(ModItems.GRANITE_BOOTS, "Granite Boots");
+        translationBuilder.add(ModItems.ANDESITE_HELMET, "Andsite Helmet");
+        translationBuilder.add(ModItems.ANDESITE_CHESTPLATE, "Andsite Chestplate");
+        translationBuilder.add(ModItems.ANDESITE_LEGGINGS, "Andsite Leggings");
+        translationBuilder.add(ModItems.ANDESITE_BOOTS, "Andsite Boots");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_HELMET, "Crying Obsidian Helmet");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_CHESTPLATE, "Crying Obsidian Chestplate");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_LEGGINGS, "Crying Obsidian Leggings");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_BOOTS, "Crying Obsidian Boots");
+        translationBuilder.add(ModItems.OBSIDIAN_HELMET, "Obsidian Helmet");
+        translationBuilder.add(ModItems.OBSIDIAN_CHESTPLATE, "Obsidian Chestplate");
+        translationBuilder.add(ModItems.OBSIDIAN_LEGGINGS, "Obsidian Leggings");
+        translationBuilder.add(ModItems.OBSIDIAN_BOOTS, "Obsidian Boots");
     }
 }

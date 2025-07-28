@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:cherry_planks"
+              "minecraft:andesite"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "stonewood-industry:cherry_sword"
+        "recipe": "stonewood-industry:andesite_chestplate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "stonewood-industry:cherry_sword"
+      "stonewood-industry:andesite_chestplate"
     ]
   },
   "sends_telemetry_event": false

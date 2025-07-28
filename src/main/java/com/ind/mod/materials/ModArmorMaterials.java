@@ -20,13 +20,13 @@ public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
-    }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 2.0F, 1.0F, ()->Ingredient.ofItems(Items.STONE)),
+    }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.STONE)),
     SMOOTH_STONE("smooth_stone", 10, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
-    }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 2.0F, 1.0F, ()->Ingredient.ofItems(Items.SMOOTH_STONE)),
+    }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.SMOOTH_STONE)),
     OAK("oak", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
@@ -80,13 +80,13 @@ public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.BLACKSTONE)),
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.BLACKSTONE)),
     DEEPSLATE("deepslate", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.DEEPSLATE)),
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.DEEPSLATE)),
     BAMBOO("bamboo", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
@@ -104,7 +104,55 @@ public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS));
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS)),
+    NETHERRACK("netherrack", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.05F, ()->Ingredient.ofItems(Items.NETHERRACK)),
+    BASALT("basalt", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.05F, ()->Ingredient.ofItems(Items.BASALT)),
+    END_STONE("end_stone", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.05F, ()->Ingredient.ofItems(Items.END_STONE)),
+    DIORITE("diorite", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.GRANITE)),
+    GRANITE("granite", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.ANDESITE)),
+    ANDESITE("andesite", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.CRYING_OBSIDIAN)),
+    CRYING_OBSIDIAN("crying_obsidian", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.3F, ()->Ingredient.ofItems(Items.OBSIDIAN)),
+    OBSIDIAN("obsidian", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.3F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS));
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 16);

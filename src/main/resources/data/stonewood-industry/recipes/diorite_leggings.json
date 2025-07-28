@@ -3,19 +3,16 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:cherry_planks"
-    },
-    "I": {
-      "item": "minecraft:stick"
+      "item": "minecraft:diorite"
     }
   },
   "pattern": [
-    " # ",
-    " # ",
-    " I "
+    "###",
+    "# #",
+    "# #"
   ],
   "result": {
-    "item": "stonewood-industry:cherry_sword"
+    "item": "stonewood-industry:diorite_leggings"
   },
   "show_notification": true
 }

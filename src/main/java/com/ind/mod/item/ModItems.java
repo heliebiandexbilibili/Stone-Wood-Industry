@@ -83,5 +83,36 @@ public class ModItems {
     public static final Item BAMBOO_CHESTPLATE = register("bamboo_chestplate", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item BAMBOO_LEGGINGS = register("bamboo_leggings", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item BAMBOO_BOOTS = register("bamboo_boots", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.BOOTS, new FabricItemSettings()));
-
+    public static final Item NETHERRACK_HELMET = register("netherrack_helmet", new StoneArmorItem(ModArmorMaterials.NETHERRACK, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item NETHERRACK_CHESTPLATE = register("netherrack_chestplate", new StoneArmorItem(ModArmorMaterials.NETHERRACK, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item NETHERRACK_LEGGINGS = register("netherrack_leggings", new StoneArmorItem(ModArmorMaterials.NETHERRACK, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item NETHERRACK_BOOTS = register("netherrack_boots", new StoneArmorItem(ModArmorMaterials.NETHERRACK, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item BASALT_HELMET = register("basalt_helmet", new StoneArmorItem(ModArmorMaterials.BASALT, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item BASALT_CHESTPLATE = register("basalt_chestplate", new StoneArmorItem(ModArmorMaterials.BASALT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item BASALT_LEGGINGS = register("basalt_leggings", new StoneArmorItem(ModArmorMaterials.BASALT, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item BASALT_BOOTS = register("basalt_boots", new StoneArmorItem(ModArmorMaterials.BASALT, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item END_STONE_HELMET = register("end_stone_helmet", new StoneArmorItem(ModArmorMaterials.END_STONE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item END_STONE_CHESTPLATE = register("end_stone_chestplate", new StoneArmorItem(ModArmorMaterials.END_STONE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item END_STONE_LEGGINGS = register("end_stone_leggings", new StoneArmorItem(ModArmorMaterials.END_STONE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item END_STONE_BOOTS = register("end_stone_boots", new StoneArmorItem(ModArmorMaterials.END_STONE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item DIORITE_HELMET = register("diorite_helmet", new StoneArmorItem(ModArmorMaterials.DIORITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item DIORITE_CHESTPLATE = register("diorite_chestplate", new StoneArmorItem(ModArmorMaterials.DIORITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item DIORITE_LEGGINGS = register("diorite_leggings", new StoneArmorItem(ModArmorMaterials.DIORITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item DIORITE_BOOTS = register("diorite_boots", new StoneArmorItem(ModArmorMaterials.DIORITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GRANITE_HELMET = register("granite_helmet", new StoneArmorItem(ModArmorMaterials.GRANITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GRANITE_CHESTPLATE = register("granite_chestplate", new StoneArmorItem(ModArmorMaterials.GRANITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item GRANITE_LEGGINGS = register("granite_leggings", new StoneArmorItem(ModArmorMaterials.GRANITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item GRANITE_BOOTS = register("granite_boots", new StoneArmorItem(ModArmorMaterials.GRANITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item ANDESITE_HELMET = register("andesite_helmet", new StoneArmorItem(ModArmorMaterials.ANDESITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item ANDESITE_CHESTPLATE = register("andesite_chestplate", new StoneArmorItem(ModArmorMaterials.ANDESITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item ANDESITE_LEGGINGS = register("andesite_leggings", new StoneArmorItem(ModArmorMaterials.ANDESITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item ANDESITE_BOOTS = register("andesite_boots", new StoneArmorItem(ModArmorMaterials.ANDESITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_HELMET = register("crying_obsidian_helmet", new StoneArmorItem(ModArmorMaterials.CRYING_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_CHESTPLATE = register("crying_obsidian_chestplate", new StoneArmorItem(ModArmorMaterials.CRYING_OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_LEGGINGS = register("crying_obsidian_leggings", new StoneArmorItem(ModArmorMaterials.CRYING_OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_BOOTS = register("crying_obsidian_boots", new StoneArmorItem(ModArmorMaterials.CRYING_OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item OBSIDIAN_HELMET = register("obsidian_helmet", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item OBSIDIAN_CHESTPLATE = register("obsidian_chestplate", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item OBSIDIAN_LEGGINGS = register("obsidian_leggings", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item OBSIDIAN_BOOTS = register("obsidian_boots", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 }

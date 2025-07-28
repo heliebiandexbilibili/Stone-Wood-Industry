@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
      public static void register(){
-         StoneWoodIndustry.LOGGER.info("STONE&WOOD INDUSTRY>>>REGISTERING MOD ITEMGROUPS!");
+         StoneWoodIndustry.LOGGER.info("STONE&WOOD INDUSTRY>>>Registering MOD Itemgroups!");
      }
 
     public static ItemGroup register(String name, ItemGroup itemGroup){
@@ -42,6 +42,38 @@ public class ModItemGroups {
                 entries.add(ModItems.DEEPSLATE_CHESTPLATE);
                 entries.add(ModItems.DEEPSLATE_LEGGINGS);
                 entries.add(ModItems.DEEPSLATE_BOOTS);
+                entries.add(ModItems.NETHERRACK_HELMET);
+                entries.add(ModItems.NETHERRACK_CHESTPLATE);
+                entries.add(ModItems.NETHERRACK_LEGGINGS);
+                entries.add(ModItems.NETHERRACK_BOOTS);
+                entries.add(ModItems.BASALT_HELMET);
+                entries.add(ModItems.BASALT_CHESTPLATE);
+                entries.add(ModItems.BASALT_LEGGINGS);
+                entries.add(ModItems.BASALT_BOOTS);
+                entries.add(ModItems.END_STONE_HELMET);
+                entries.add(ModItems.END_STONE_CHESTPLATE);
+                entries.add(ModItems.END_STONE_LEGGINGS);
+                entries.add(ModItems.END_STONE_BOOTS);
+                entries.add(ModItems.DIORITE_HELMET);
+                entries.add(ModItems.DIORITE_CHESTPLATE);
+                entries.add(ModItems.DIORITE_LEGGINGS);
+                entries.add(ModItems.DIORITE_BOOTS);
+                entries.add(ModItems.GRANITE_HELMET);
+                entries.add(ModItems.GRANITE_CHESTPLATE);
+                entries.add(ModItems.GRANITE_LEGGINGS);
+                entries.add(ModItems.GRANITE_BOOTS);
+                entries.add(ModItems.ANDESITE_HELMET);
+                entries.add(ModItems.ANDESITE_CHESTPLATE);
+                entries.add(ModItems.ANDESITE_LEGGINGS);
+                entries.add(ModItems.ANDESITE_BOOTS);
+                entries.add(ModItems.CRYING_OBSIDIAN_HELMET);
+                entries.add(ModItems.CRYING_OBSIDIAN_CHESTPLATE);
+                entries.add(ModItems.CRYING_OBSIDIAN_LEGGINGS);
+                entries.add(ModItems.CRYING_OBSIDIAN_BOOTS);
+                entries.add(ModItems.OBSIDIAN_HELMET);
+                entries.add(ModItems.OBSIDIAN_CHESTPLATE);
+                entries.add(ModItems.OBSIDIAN_LEGGINGS);
+                entries.add(ModItems.OBSIDIAN_BOOTS);
                 entries.add(ModItems.SMOOTH_STONE_SWORD);
                 entries.add(ModItems.SMOOTH_STONE_SHOVEL);
                 entries.add(ModItems.SMOOTH_STONE_PICKAXE);

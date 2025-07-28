@@ -84,5 +84,37 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.WARPED_CHESTPLATE, "诡异木胸甲");
         translationBuilder.add(ModItems.WARPED_LEGGINGS, "诡异木护腿");
         translationBuilder.add(ModItems.WARPED_BOOTS, "诡异木鞋子");
+        translationBuilder.add(ModItems.NETHERRACK_HELMET, "下界岩头盔");
+        translationBuilder.add(ModItems.NETHERRACK_CHESTPLATE, "下界岩胸甲");
+        translationBuilder.add(ModItems.NETHERRACK_LEGGINGS, "下界岩护腿");
+        translationBuilder.add(ModItems.NETHERRACK_BOOTS, "下界岩鞋子");
+        translationBuilder.add(ModItems.BASALT_HELMET, "玄武岩头盔");
+        translationBuilder.add(ModItems.BASALT_CHESTPLATE, "玄武岩胸甲");
+        translationBuilder.add(ModItems.BASALT_LEGGINGS, "玄武岩护腿");
+        translationBuilder.add(ModItems.BASALT_BOOTS, "玄武岩鞋子");
+        translationBuilder.add(ModItems.END_STONE_HELMET, "末地石头盔");
+        translationBuilder.add(ModItems.END_STONE_CHESTPLATE, "末地石胸甲");
+        translationBuilder.add(ModItems.END_STONE_LEGGINGS, "末地石护腿");
+        translationBuilder.add(ModItems.END_STONE_BOOTS, "末地石鞋子");
+        translationBuilder.add(ModItems.DIORITE_HELMET, "闪长岩头盔");
+        translationBuilder.add(ModItems.DIORITE_CHESTPLATE, "闪长岩胸甲");
+        translationBuilder.add(ModItems.DIORITE_LEGGINGS, "闪长岩护腿");
+        translationBuilder.add(ModItems.DIORITE_BOOTS, "闪长岩鞋子");
+        translationBuilder.add(ModItems.GRANITE_HELMET, "花岗岩头盔");
+        translationBuilder.add(ModItems.GRANITE_CHESTPLATE, "花岗岩胸甲");
+        translationBuilder.add(ModItems.GRANITE_LEGGINGS, "花岗岩护腿");
+        translationBuilder.add(ModItems.GRANITE_BOOTS, "花岗岩鞋子");
+        translationBuilder.add(ModItems.ANDESITE_HELMET, "安山岩头盔");
+        translationBuilder.add(ModItems.ANDESITE_CHESTPLATE, "安山岩胸甲");
+        translationBuilder.add(ModItems.ANDESITE_LEGGINGS, "安山岩护腿");
+        translationBuilder.add(ModItems.ANDESITE_BOOTS, "安山岩鞋子");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_HELMET, "哭泣的黑曜石头盔");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_CHESTPLATE, "哭泣的黑曜石胸甲");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_LEGGINGS, "哭泣的黑曜石护腿");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_BOOTS, "哭泣的黑曜石鞋子");
+        translationBuilder.add(ModItems.OBSIDIAN_HELMET, "黑曜石头盔");
+        translationBuilder.add(ModItems.OBSIDIAN_CHESTPLATE, "黑曜石胸甲");
+        translationBuilder.add(ModItems.OBSIDIAN_LEGGINGS, "黑曜石护腿");
+        translationBuilder.add(ModItems.OBSIDIAN_BOOTS, "黑曜石鞋子");
     }
 }
