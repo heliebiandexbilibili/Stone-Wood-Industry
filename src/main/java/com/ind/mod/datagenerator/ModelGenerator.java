@@ -56,5 +56,25 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHERRY_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHERRY_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHERRY_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLACKSTONE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLACKSTONE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLACKSTONE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLACKSTONE_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEEPSLATE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEEPSLATE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEEPSLATE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEEPSLATE_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BAMBOO_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BAMBOO_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BAMBOO_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BAMBOO_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRIMSON_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRIMSON_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRIMSON_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRIMSON_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WARPED_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WARPED_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WARPED_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WARPED_BOOTS, Models.GENERATED);
     }
 }

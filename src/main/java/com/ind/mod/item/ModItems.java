@@ -63,4 +63,25 @@ public class ModItems {
     public static final Item CHERRY_CHESTPLATE = register("cherry_chestplate", new WoodArmorItem(ModArmorMaterials.CHERRY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item CHERRY_LEGGINGS = register("cherry_leggings", new WoodArmorItem(ModArmorMaterials.CHERRY, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item CHERRY_BOOTS = register("cherry_boots", new WoodArmorItem(ModArmorMaterials.CHERRY, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item BLACKSTONE_HELMET = register("blackstone_helmet", new StoneArmorItem(ModArmorMaterials.BLACKSTONE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item BLACKSTONE_CHESTPLATE = register("blackstone_chestplate", new StoneArmorItem(ModArmorMaterials.BLACKSTONE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item BLACKSTONE_LEGGINGS = register("blackstone_leggings", new StoneArmorItem(ModArmorMaterials.BLACKSTONE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item BLACKSTONE_BOOTS = register("blackstone_boots", new StoneArmorItem(ModArmorMaterials.BLACKSTONE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item DEEPSLATE_HELMET = register("deepslate_helmet", new StoneArmorItem(ModArmorMaterials.DEEPSLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item DEEPSLATE_CHESTPLATE = register("deepslate_chestplate", new StoneArmorItem(ModArmorMaterials.DEEPSLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item DEEPSLATE_LEGGINGS = register("deepslate_leggings", new StoneArmorItem(ModArmorMaterials.DEEPSLATE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item DEEPSLATE_BOOTS = register("deepslate_boots", new StoneArmorItem(ModArmorMaterials.DEEPSLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item CRIMSON_HELMET = register("crimson_helmet", new WoodArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item CRIMSON_CHESTPLATE = register("crimson_chestplate", new WoodArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item CRIMSON_LEGGINGS = register("crimson_leggings", new WoodArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item CRIMSON_BOOTS = register("crimson_boots", new WoodArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item WARPED_HELMET = register("warped_helmet", new WoodArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item WARPED_CHESTPLATE = register("warped_chestplate", new WoodArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item WARPED_LEGGINGS = register("warped_leggings", new WoodArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item WARPED_BOOTS = register("warped_boots", new WoodArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item BAMBOO_HELMET = register("bamboo_helmet", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item BAMBOO_CHESTPLATE = register("bamboo_chestplate", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item BAMBOO_LEGGINGS = register("bamboo_leggings", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item BAMBOO_BOOTS = register("bamboo_boots", new WoodArmorItem(ModArmorMaterials.BAMBOO, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
 }

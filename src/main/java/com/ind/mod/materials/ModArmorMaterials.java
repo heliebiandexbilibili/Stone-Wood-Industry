@@ -15,13 +15,13 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
-    STONE("stone", 15, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    STONE("stone", 10, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
     }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 2.0F, 1.0F, ()->Ingredient.ofItems(Items.STONE)),
-    SMOOTH_STONE("smooth_stone", 15, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    SMOOTH_STONE("smooth_stone", 10, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
@@ -74,7 +74,37 @@ public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CHERRY_PLANKS));
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CHERRY_PLANKS)),
+    BLACKSTONE("blackstone", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 3);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
+        enumMap.put(ArmorItem.Type.HELMET, 3);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.BLACKSTONE)),
+    DEEPSLATE("deepslate", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 3);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
+        enumMap.put(ArmorItem.Type.HELMET, 3);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.DEEPSLATE)),
+    BAMBOO("bamboo", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.BAMBOO_PLANKS)),
+    WARPED("warped", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.WARPED_PLANKS)),
+    CRIMSON("crimson", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 2);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
+        enumMap.put(ArmorItem.Type.HELMET, 4);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS));
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 16);

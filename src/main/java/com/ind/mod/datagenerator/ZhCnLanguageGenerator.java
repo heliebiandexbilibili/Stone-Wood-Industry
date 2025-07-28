@@ -64,5 +64,25 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.CHERRY_CHESTPLATE, "樱花木胸甲");
         translationBuilder.add(ModItems.CHERRY_LEGGINGS, "樱花木护腿");
         translationBuilder.add(ModItems.CHERRY_BOOTS, "樱花木鞋子");
+        translationBuilder.add(ModItems.BLACKSTONE_HELMET, "黑石头盔");
+        translationBuilder.add(ModItems.BLACKSTONE_CHESTPLATE, "黑石胸甲");
+        translationBuilder.add(ModItems.BLACKSTONE_LEGGINGS, "黑石护腿");
+        translationBuilder.add(ModItems.BLACKSTONE_BOOTS, "黑石鞋子");
+        translationBuilder.add(ModItems.DEEPSLATE_HELMET, "深板岩头盔");
+        translationBuilder.add(ModItems.DEEPSLATE_CHESTPLATE, "深板岩胸甲");
+        translationBuilder.add(ModItems.DEEPSLATE_LEGGINGS, "深板岩护腿");
+        translationBuilder.add(ModItems.DEEPSLATE_BOOTS, "深板岩鞋子");
+        translationBuilder.add(ModItems.BAMBOO_HELMET, "竹子头盔");
+        translationBuilder.add(ModItems.BAMBOO_CHESTPLATE, "竹子胸甲");
+        translationBuilder.add(ModItems.BAMBOO_LEGGINGS, "竹子护腿");
+        translationBuilder.add(ModItems.BAMBOO_BOOTS, "竹子鞋子");
+        translationBuilder.add(ModItems.CRIMSON_HELMET, "绯红木头盔");
+        translationBuilder.add(ModItems.CRIMSON_CHESTPLATE, "绯红木胸甲");
+        translationBuilder.add(ModItems.CRIMSON_LEGGINGS, "绯红木护腿");
+        translationBuilder.add(ModItems.CRIMSON_BOOTS, "绯红木鞋子");
+        translationBuilder.add(ModItems.WARPED_HELMET, "诡异木头盔");
+        translationBuilder.add(ModItems.WARPED_CHESTPLATE, "诡异木胸甲");
+        translationBuilder.add(ModItems.WARPED_LEGGINGS, "诡异木护腿");
+        translationBuilder.add(ModItems.WARPED_BOOTS, "诡异木鞋子");
     }
 }

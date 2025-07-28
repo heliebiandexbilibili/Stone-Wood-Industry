@@ -34,6 +34,14 @@ public class ModItemGroups {
                 entries.add(ModItems.SMOOTH_STONE_CHESTPLATE);
                 entries.add(ModItems.SMOOTH_STONE_LEGGINGS);
                 entries.add(ModItems.SMOOTH_STONE_BOOTS);
+                entries.add(ModItems.BLACKSTONE_HELMET);
+                entries.add(ModItems.BLACKSTONE_CHESTPLATE);
+                entries.add(ModItems.BLACKSTONE_LEGGINGS);
+                entries.add(ModItems.BLACKSTONE_BOOTS);
+                entries.add(ModItems.DEEPSLATE_HELMET);
+                entries.add(ModItems.DEEPSLATE_CHESTPLATE);
+                entries.add(ModItems.DEEPSLATE_LEGGINGS);
+                entries.add(ModItems.DEEPSLATE_BOOTS);
                 entries.add(ModItems.SMOOTH_STONE_SWORD);
                 entries.add(ModItems.SMOOTH_STONE_SHOVEL);
                 entries.add(ModItems.SMOOTH_STONE_PICKAXE);
@@ -81,5 +89,17 @@ public class ModItemGroups {
                 entries.add(ModItems.CHERRY_CHESTPLATE);
                 entries.add(ModItems.CHERRY_LEGGINGS);
                 entries.add(ModItems.CHERRY_BOOTS);
+                entries.add(ModItems.WARPED_HELMET);
+                entries.add(ModItems.WARPED_CHESTPLATE);
+                entries.add(ModItems.WARPED_LEGGINGS);
+                entries.add(ModItems.WARPED_BOOTS);
+                entries.add(ModItems.CRIMSON_HELMET);
+                entries.add(ModItems.CRIMSON_CHESTPLATE);
+                entries.add(ModItems.CRIMSON_LEGGINGS);
+                entries.add(ModItems.CRIMSON_BOOTS);
+                entries.add(ModItems.BAMBOO_HELMET);
+                entries.add(ModItems.BAMBOO_CHESTPLATE);
+                entries.add(ModItems.BAMBOO_LEGGINGS);
+                entries.add(ModItems.BAMBOO_BOOTS);
             })).build());
 }

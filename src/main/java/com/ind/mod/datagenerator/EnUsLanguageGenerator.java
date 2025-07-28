@@ -64,5 +64,25 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.CHERRY_CHESTPLATE, "Cherry Chestplate");
         translationBuilder.add(ModItems.CHERRY_LEGGINGS, "Cherry Leggings");
         translationBuilder.add(ModItems.CHERRY_BOOTS, "Cherry Boots");
+        translationBuilder.add(ModItems.BLACKSTONE_HELMET, "Blackstone Helmet");
+        translationBuilder.add(ModItems.BLACKSTONE_CHESTPLATE, "Blackstone Chestplate");
+        translationBuilder.add(ModItems.BLACKSTONE_LEGGINGS, "Blackstone Leggings");
+        translationBuilder.add(ModItems.BLACKSTONE_BOOTS, "Blackstone Boots");
+        translationBuilder.add(ModItems.DEEPSLATE_HELMET, "Deepslate Helmet");
+        translationBuilder.add(ModItems.DEEPSLATE_CHESTPLATE, "Deepslate Chestplate");
+        translationBuilder.add(ModItems.DEEPSLATE_LEGGINGS, "Deepslate Leggings");
+        translationBuilder.add(ModItems.DEEPSLATE_BOOTS, "Deepslate Boots");
+        translationBuilder.add(ModItems.BAMBOO_HELMET, "Bamboo Helmet");
+        translationBuilder.add(ModItems.BAMBOO_CHESTPLATE, "Bamboo Chestplate");
+        translationBuilder.add(ModItems.BAMBOO_LEGGINGS, "Bamboo Leggings");
+        translationBuilder.add(ModItems.BAMBOO_BOOTS, "Bamboo Boots");
+        translationBuilder.add(ModItems.CRIMSON_HELMET, "Crimson Helmet");
+        translationBuilder.add(ModItems.CRIMSON_CHESTPLATE, "Crimson Chestplate");
+        translationBuilder.add(ModItems.CRIMSON_LEGGINGS, "Crimson Leggings");
+        translationBuilder.add(ModItems.CRIMSON_BOOTS, "Crimson Boots");
+        translationBuilder.add(ModItems.WARPED_HELMET, "Warped Helmet");
+        translationBuilder.add(ModItems.WARPED_CHESTPLATE, "Warped Chestplate");
+        translationBuilder.add(ModItems.WARPED_LEGGINGS, "Warped Leggings");
+        translationBuilder.add(ModItems.WARPED_BOOTS, "Warped Boots");
     }
 }
