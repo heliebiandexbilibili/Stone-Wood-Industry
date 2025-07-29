@@ -15,139 +15,139 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
-    STONE("stone", 10, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    STONE("stone", 25, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
     }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.STONE)),
-    SMOOTH_STONE("smooth_stone", 10, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    SMOOTH_STONE("smooth_stone", 25, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
     }), 5, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.SMOOTH_STONE)),
-    OAK("oak", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    OAK("oak", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.OAK_PLANKS)),
-    SPRUCE("spruce", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    SPRUCE("spruce", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.SPRUCE_PLANKS)),
-    BIRCH("birch", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    BIRCH("birch", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.BIRCH_PLANKS)),
-    JUNGLE("jungle", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    JUNGLE("jungle", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.JUNGLE_PLANKS)),
-    DARK_OAK("dark_oak", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    DARK_OAK("dark_oak", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.DARK_OAK_PLANKS)),
-    ACACIA("acacia", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    ACACIA("acacia", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.ACACIA_PLANKS)),
-    MANGROVE("mangrove", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    MANGROVE("mangrove", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.JUNGLE_PLANKS)),
-    CHERRY("cherry", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    CHERRY("cherry", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CHERRY_PLANKS)),
-    BLACKSTONE("blackstone", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    BLACKSTONE("blackstone", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.BLACKSTONE)),
-    DEEPSLATE("deepslate", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    DEEPSLATE("deepslate", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 3);
         enumMap.put(ArmorItem.Type.LEGGINGS, 6);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
         enumMap.put(ArmorItem.Type.HELMET, 3);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.DEEPSLATE)),
-    BAMBOO("bamboo", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    BAMBOO("bamboo", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.BAMBOO_PLANKS)),
-    WARPED("warped", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    WARPED("warped", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 4);
         enumMap.put(ArmorItem.Type.HELMET, 2);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.WARPED_PLANKS)),
-    CRIMSON("crimson", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    CRIMSON("crimson", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS)),
-    NETHERRACK("netherrack", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    NETHERRACK("netherrack", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.05F, ()->Ingredient.ofItems(Items.NETHERRACK)),
-    BASALT("basalt", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    BASALT("basalt", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.05F, ()->Ingredient.ofItems(Items.BASALT)),
-    END_STONE("end_stone", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    END_STONE("end_stone", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.05F, ()->Ingredient.ofItems(Items.END_STONE)),
-    DIORITE("diorite", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    DIORITE("diorite", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.GRANITE)),
-    GRANITE("granite", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    GRANITE("granite", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.ANDESITE)),
-    ANDESITE("andesite", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    ANDESITE("andesite", 20, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.1F, ()->Ingredient.ofItems(Items.CRYING_OBSIDIAN)),
-    CRYING_OBSIDIAN("crying_obsidian", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    CRYING_OBSIDIAN("crying_obsidian", 50, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.3F, ()->Ingredient.ofItems(Items.OBSIDIAN)),
-    OBSIDIAN("obsidian", 4, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+    OBSIDIAN("obsidian", 50, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
         enumMap.put(ArmorItem.Type.BOOTS, 2);
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);

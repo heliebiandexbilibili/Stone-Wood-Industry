@@ -1,6 +1,7 @@
 package com.ind.mod;
 
 import com.ind.mod.block.ModBlocks;
+import com.ind.mod.enchantment.ModEnchantment;
 import com.ind.mod.inventory.ModItemGroups;
 import com.ind.mod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -26,6 +27,7 @@ public class StoneWoodIndustry implements ModInitializer {
 		LOGGER.debug("FUCK BUGJUMP");
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModEnchantment.registerModEnchantment();
 		ModItemGroups.register();
 	}
 }

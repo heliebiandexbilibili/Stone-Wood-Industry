@@ -108,5 +108,15 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItems.OBSIDIAN_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.OBSIDIAN_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(ModItems.OBSIDIAN_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRYING_OBSIDIAN_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OBSIDIAN_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OBSIDIAN_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OBSIDIAN_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OBSIDIAN_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OBSIDIAN_SWORD, Models.HANDHELD);
     }
 }

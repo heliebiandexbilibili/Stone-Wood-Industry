@@ -8,7 +8,9 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    SMOOTH_STONE(MiningLevels.STONE, 1600, 8.0F, 0.0F, 10, ()-> Ingredient.ofItems(Items.SMOOTH_STONE));
+    SMOOTH_STONE(MiningLevels.STONE, 1600, 8.0F, 0.0F, 10, ()-> Ingredient.ofItems(Items.SMOOTH_STONE)),
+    CRYING_OBSIDIAN(MiningLevels.NETHERITE, 3000, 16.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.CRYING_OBSIDIAN)),
+    OBSIDIAN(MiningLevels.NETHERITE, 3000, 16.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.OBSIDIAN));
     private final int miningLevel;
     private final int itemDurability;
     private final float miningSpeed;

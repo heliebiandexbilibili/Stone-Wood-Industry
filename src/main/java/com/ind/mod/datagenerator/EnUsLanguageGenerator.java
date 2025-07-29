@@ -2,6 +2,7 @@ package com.ind.mod.datagenerator;
 
 import com.ind.mod.StoneWoodIndustry;
 import com.ind.mod.block.ModBlocks;
+import com.ind.mod.enchantment.ModEnchantment;
 import com.ind.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -32,6 +33,7 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.SMOOTH_STONE_SWORD, "Smooth Stone Sword");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone"), "Stone Wood Industry: Stone Products");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood"), "Stone Wood Industry: Wood Products");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_enchant"), "Stone Wood Industry: Enchantment");
         translationBuilder.add(ModItems.OAK_HELMET, "Oak Helmet");
         translationBuilder.add(ModItems.OAK_CHESTPLATE, "Oak Chestplate");
         translationBuilder.add(ModItems.OAK_LEGGINGS, "Oak Leggings");
@@ -116,5 +118,17 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.OBSIDIAN_CHESTPLATE, "Obsidian Chestplate");
         translationBuilder.add(ModItems.OBSIDIAN_LEGGINGS, "Obsidian Leggings");
         translationBuilder.add(ModItems.OBSIDIAN_BOOTS, "Obsidian Boots");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_PICKAXE, "Crying Obsidian Pickaxe");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_AXE, "Crying Obsidian Axe");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_HOE, "Crying Obsidian Hoe");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_SHOVEL, "Crying Obsidian Shovel");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_SWORD, "Crying Obsidian Sword");
+        translationBuilder.add(ModItems.OBSIDIAN_PICKAXE, "Obsidian Pickaxe");
+        translationBuilder.add(ModItems.OBSIDIAN_AXE, "Obsidian Axe");
+        translationBuilder.add(ModItems.OBSIDIAN_HOE, "Obsidian Hoe");
+        translationBuilder.add(ModItems.OBSIDIAN_SHOVEL, "Obsidian Shovel");
+        translationBuilder.add(ModItems.OBSIDIAN_SWORD, "Obsidian Sword");
+        translationBuilder.add(ModEnchantment.HARDEN, "Harden");
+        translationBuilder.add(ModEnchantment.SPEED, "Speed");
     }
 }

@@ -2,9 +2,12 @@ package com.ind.mod.inventory;
 
 import com.ind.mod.StoneWoodIndustry;
 import com.ind.mod.block.ModBlocks;
+import com.ind.mod.enchantment.ModEnchantment;
 import com.ind.mod.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -21,7 +24,13 @@ public class ModItemGroups {
     public static ItemGroup register(String name, ItemGroup itemGroup){
         return Registry.register(Registries.ITEM_GROUP, new Identifier(StoneWoodIndustry.MOD_ID, name), itemGroup);
     }
-
+    public static final ItemGroup STONE_WOOD_INDUSTRY_ENCHANTMENT = register("stone_wood_industry_enchant", FabricItemGroup.builder()
+            .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_enchant").toTranslationKey()))
+            .icon(()->new ItemStack(Items.ENCHANTED_BOOK))
+            .entries(((displayContext, entries) -> {
+                entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.HARDEN, 5)));
+                entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.SPEED, 5)));
+            })).build());
     public static final ItemGroup STONE_WOOD_INDUSTRY_STONE = register("stone_wood_industry_stone", FabricItemGroup.builder()
             .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone").toTranslationKey()))
             .icon(()->new ItemStack(Items.SMOOTH_STONE))
@@ -30,10 +39,20 @@ public class ModItemGroups {
                 entries.add(ModItems.STONE_CHESTPLATE);
                 entries.add(ModItems.STONE_LEGGINGS);
                 entries.add(ModItems.STONE_BOOTS);
+                entries.add(Items.STONE_SWORD);
+                entries.add(Items.STONE_SHOVEL);
+                entries.add(Items.STONE_PICKAXE);
+                entries.add(Items.STONE_AXE);
+                entries.add(Items.STONE_HOE);
                 entries.add(ModItems.SMOOTH_STONE_HELMET);
                 entries.add(ModItems.SMOOTH_STONE_CHESTPLATE);
                 entries.add(ModItems.SMOOTH_STONE_LEGGINGS);
                 entries.add(ModItems.SMOOTH_STONE_BOOTS);
+                entries.add(ModItems.SMOOTH_STONE_SWORD);
+                entries.add(ModItems.SMOOTH_STONE_SHOVEL);
+                entries.add(ModItems.SMOOTH_STONE_PICKAXE);
+                entries.add(ModItems.SMOOTH_STONE_AXE);
+                entries.add(ModItems.SMOOTH_STONE_HOE);
                 entries.add(ModItems.BLACKSTONE_HELMET);
                 entries.add(ModItems.BLACKSTONE_CHESTPLATE);
                 entries.add(ModItems.BLACKSTONE_LEGGINGS);
@@ -70,15 +89,20 @@ public class ModItemGroups {
                 entries.add(ModItems.CRYING_OBSIDIAN_CHESTPLATE);
                 entries.add(ModItems.CRYING_OBSIDIAN_LEGGINGS);
                 entries.add(ModItems.CRYING_OBSIDIAN_BOOTS);
+                entries.add(ModItems.CRYING_OBSIDIAN_SWORD);
+                entries.add(ModItems.CRYING_OBSIDIAN_SHOVEL);
+                entries.add(ModItems.CRYING_OBSIDIAN_PICKAXE);
+                entries.add(ModItems.CRYING_OBSIDIAN_AXE);
+                entries.add(ModItems.CRYING_OBSIDIAN_HOE);
                 entries.add(ModItems.OBSIDIAN_HELMET);
                 entries.add(ModItems.OBSIDIAN_CHESTPLATE);
                 entries.add(ModItems.OBSIDIAN_LEGGINGS);
                 entries.add(ModItems.OBSIDIAN_BOOTS);
-                entries.add(ModItems.SMOOTH_STONE_SWORD);
-                entries.add(ModItems.SMOOTH_STONE_SHOVEL);
-                entries.add(ModItems.SMOOTH_STONE_PICKAXE);
-                entries.add(ModItems.SMOOTH_STONE_AXE);
-                entries.add(ModItems.SMOOTH_STONE_HOE);
+                entries.add(ModItems.OBSIDIAN_SWORD);
+                entries.add(ModItems.OBSIDIAN_SHOVEL);
+                entries.add(ModItems.OBSIDIAN_PICKAXE);
+                entries.add(ModItems.OBSIDIAN_AXE);
+                entries.add(ModItems.OBSIDIAN_HOE);
                 entries.add(Blocks.SMOOTH_STONE);
                 entries.add(Blocks.SMOOTH_STONE_SLAB);
                 entries.add(ModBlocks.SMOOTH_STONE_STAIRS);

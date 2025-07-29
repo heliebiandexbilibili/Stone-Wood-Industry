@@ -20,8 +20,7 @@ public class SmoothStoneArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, List<StatusEffectInstance>> MAP =
             (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>()
                     .put(ModArmorMaterials.STONE, Arrays.asList(
-                            new StatusEffectInstance(StatusEffects.SLOWNESS, 1, 1, false, false, true),
-                            new StatusEffectInstance(StatusEffects.RESISTANCE, 1, 1, false, false, true)
+                            new StatusEffectInstance(StatusEffects.SLOWNESS, 1, 1, false, false, true)
                     ))
                     .build());
     public SmoothStoneArmorItem(ArmorMaterial material, Type type, Settings settings) {

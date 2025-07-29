@@ -2,6 +2,7 @@ package com.ind.mod.datagenerator;
 
 import com.ind.mod.StoneWoodIndustry;
 import com.ind.mod.block.ModBlocks;
+import com.ind.mod.enchantment.ModEnchantment;
 import com.ind.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -32,6 +33,7 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.SMOOTH_STONE_SWORD, "平滑石剑");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone"), "石木工艺：石头制品");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood"), "石木工艺：木头制品");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_enchant"), "石木工艺：附魔");
         translationBuilder.add(ModItems.OAK_HELMET, "橡木头盔");
         translationBuilder.add(ModItems.OAK_CHESTPLATE, "橡木胸甲");
         translationBuilder.add(ModItems.OAK_LEGGINGS, "橡木护腿");
@@ -116,5 +118,17 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.OBSIDIAN_CHESTPLATE, "黑曜石胸甲");
         translationBuilder.add(ModItems.OBSIDIAN_LEGGINGS, "黑曜石护腿");
         translationBuilder.add(ModItems.OBSIDIAN_BOOTS, "黑曜石鞋子");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_PICKAXE, "哭泣的黑曜石镐子");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_AXE, "哭泣的黑曜石斧头");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_HOE, "哭泣的黑曜石锄头");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_SHOVEL, "哭泣的黑曜石铲子");
+        translationBuilder.add(ModItems.CRYING_OBSIDIAN_SWORD, "哭泣的黑曜石剑");
+        translationBuilder.add(ModItems.OBSIDIAN_PICKAXE, "黑曜石镐子");
+        translationBuilder.add(ModItems.OBSIDIAN_AXE, "黑曜石斧头");
+        translationBuilder.add(ModItems.OBSIDIAN_HOE, "黑曜石锄头");
+        translationBuilder.add(ModItems.OBSIDIAN_SHOVEL, "黑曜石铲子");
+        translationBuilder.add(ModItems.OBSIDIAN_SWORD, "黑曜石剑");
+        translationBuilder.add(ModEnchantment.HARDEN, "硬化");
+        translationBuilder.add(ModEnchantment.SPEED, "快跑");
     }
 }

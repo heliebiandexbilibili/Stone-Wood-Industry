@@ -115,4 +115,14 @@ public class ModItems {
     public static final Item OBSIDIAN_CHESTPLATE = register("obsidian_chestplate", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item OBSIDIAN_LEGGINGS = register("obsidian_leggings", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item OBSIDIAN_BOOTS = register("obsidian_boots", new StoneArmorItem(ModArmorMaterials.OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_PICKAXE = register("crying_obsidian_pickaxe", new PickaxeItem(ModToolMaterials.CRYING_OBSIDIAN, 2, 3.0F, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_SWORD = register("crying_obsidian_sword", new SwordItem(ModToolMaterials.CRYING_OBSIDIAN, 7, 3.0F, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_HOE = register("crying_obsidian_hoe", new HoeItem(ModToolMaterials.CRYING_OBSIDIAN, 2, 3.0F, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_AXE = register("crying_obsidian_axe", new AxeItem(ModToolMaterials.CRYING_OBSIDIAN, 8, 3.0F, new FabricItemSettings()));
+    public static final Item CRYING_OBSIDIAN_SHOVEL = register("crying_obsidian_shovel", new ShovelItem(ModToolMaterials.CRYING_OBSIDIAN, 2, 3.0F, new FabricItemSettings()));
+    public static final Item OBSIDIAN_PICKAXE = register("obsidian_pickaxe", new PickaxeItem(ModToolMaterials.OBSIDIAN, 2, 3.0F, new FabricItemSettings()));
+    public static final Item OBSIDIAN_SWORD = register("obsidian_sword", new SwordItem(ModToolMaterials.OBSIDIAN, 7, 3.0F, new FabricItemSettings()));
+    public static final Item OBSIDIAN_HOE = register("obsidian_hoe", new HoeItem(ModToolMaterials.OBSIDIAN, 2, 3.0F, new FabricItemSettings()));
+    public static final Item OBSIDIAN_AXE = register("obsidian_axe", new AxeItem(ModToolMaterials.OBSIDIAN, 8, 3.0F, new FabricItemSettings()));
+    public static final Item OBSIDIAN_SHOVEL = register("obsidian_shovel", new ShovelItem(ModToolMaterials.OBSIDIAN, 2, 3.0F, new FabricItemSettings()));
 }
