@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:deepslate"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " # ",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:deepslate_shovel"
+  },
+  "show_notification": true
+}

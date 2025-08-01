@@ -8,9 +8,17 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    SMOOTH_STONE(MiningLevels.STONE, 1600, 8.0F, 0.0F, 10, ()-> Ingredient.ofItems(Items.SMOOTH_STONE)),
-    CRYING_OBSIDIAN(MiningLevels.NETHERITE, 3000, 16.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.CRYING_OBSIDIAN)),
-    OBSIDIAN(MiningLevels.NETHERITE, 3000, 16.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.OBSIDIAN));
+    SMOOTH_STONE(MiningLevels.STONE, 800, 5.0F, 0.0F, 10, ()-> Ingredient.ofItems(Items.SMOOTH_STONE)),
+    CRYING_OBSIDIAN(MiningLevels.NETHERITE, 2000, 8.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.CRYING_OBSIDIAN)),
+    OBSIDIAN(MiningLevels.NETHERITE, 2000, 8.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.OBSIDIAN)),
+    END_STONE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.END_STONE)),
+    BLACKSTONE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.BLACKSTONE)),
+    DEEPSLATE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.DEEPSLATE)),
+    NETHERRACK(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.NETHERRACK)),
+    DIORITE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.DIORITE)),
+    GRANITE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.GRANITE)),
+    ANDESITE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.ANDESITE)),
+    BASALT(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.BASALT));
     private final int miningLevel;
     private final int itemDurability;
     private final float miningSpeed;

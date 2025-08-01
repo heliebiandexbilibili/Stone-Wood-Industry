@@ -22,4 +22,6 @@ public class ModBlocks {
     public static Block SMOOTH_STONE_PRESSURE_PLATE = register("smooth_stone_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.create(), BlockSetType.STONE));
     public static Block SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", new StairsBlock(Blocks.SMOOTH_STONE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)));
     public static Block SMOOTH_STONE_BUTTON = register("smooth_stone_button", Blocks.createStoneButtonBlock());
+    public static Block OBSIDIAN_STAIRS = register("obsidian_stairs", new StairsBlock(Blocks.OBSIDIAN.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OBSIDIAN)));
+    public static Block OBSIDIAN_SLAB = register("obsidian_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.OBSIDIAN)));
 }

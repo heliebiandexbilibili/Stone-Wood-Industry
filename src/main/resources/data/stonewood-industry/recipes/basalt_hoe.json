@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:basalt"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "## ",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:basalt_hoe"
+  },
+  "show_notification": true
+}

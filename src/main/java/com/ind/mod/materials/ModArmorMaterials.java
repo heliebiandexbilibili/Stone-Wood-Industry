@@ -152,7 +152,13 @@ public enum ModArmorMaterials implements ArmorMaterial, StringIdentifiable {
         enumMap.put(ArmorItem.Type.LEGGINGS, 3);
         enumMap.put(ArmorItem.Type.CHESTPLATE, 2);
         enumMap.put(ArmorItem.Type.HELMET, 4);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.3F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS));
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, 0.3F, ()->Ingredient.ofItems(Items.CRIMSON_PLANKS)),
+    BEDROCK("bedrock", -1, Util.make(new EnumMap(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 99999999);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 99999999);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 99999999);
+        enumMap.put(ArmorItem.Type.HELMET, 99999999);
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 9999.0F, 9999.0F, ()->Ingredient.ofItems(Items.BEDROCK));
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 16);
