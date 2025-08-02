@@ -2,6 +2,7 @@ package com.ind.mod.item;
 
 import com.google.common.collect.ImmutableMap;
 import com.ind.mod.materials.ModArmorMaterials;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -42,7 +43,7 @@ public class StoneArmorItem extends ArmorItem {
             ArmorMaterial armorMaterial = entry.getKey();
             List<StatusEffectInstance> statusEffectInstanceList = entry.getValue();
 
-            if(hasCurrectArmorOn(material, player)){
+            if(hasCurrectArmorOn(armorMaterial, player)){
                 for (StatusEffectInstance instance:statusEffectInstanceList){
                     StatusEffect effect = instance.getEffectType();
                     if(!player.hasStatusEffect(effect)){
