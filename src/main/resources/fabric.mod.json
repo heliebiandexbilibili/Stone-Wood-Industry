@@ -2,10 +2,10 @@
 	"schemaVersion": 1,
 	"id": "stonewood-industry",
 	"version": "${version}",
-	"name": "Stone&Wood Industry",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Stone & Wood Industry",
+	"description": "Add-in wood armors and stone armors, and more!",
 	"authors": [
-		"Me!"
+		"driver166"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

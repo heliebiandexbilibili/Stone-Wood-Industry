@@ -172,5 +172,6 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.BASALT_HOE, "Basalt Hoe");
         translationBuilder.add(ModItems.BASALT_SHOVEL, "Basalt Shovel");
         translationBuilder.add(ModItems.BASALT_SWORD, "Basalt Sword");
+        translationBuilder.add(ModEnchantment.UNDYING, "Undying");
     }
 }

@@ -172,5 +172,6 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.BASALT_HOE, "玄武岩锄头");
         translationBuilder.add(ModItems.BASALT_SHOVEL, "玄武岩铲子");
         translationBuilder.add(ModItems.BASALT_SWORD, "玄武岩剑");
+        translationBuilder.add(ModEnchantment.UNDYING, "不死");
     }
 }

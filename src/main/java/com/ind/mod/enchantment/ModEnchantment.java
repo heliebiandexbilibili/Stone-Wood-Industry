@@ -1,7 +1,6 @@
 package com.ind.mod.enchantment;
 
 import com.ind.mod.StoneWoodIndustry;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
@@ -19,4 +18,5 @@ public class ModEnchantment {
 
     public static final Enchantment HARDEN = register("harden", new HardenEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, EquipmentSlot.values()));
     public static final Enchantment SPEED = register("speed", new SpeedEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, EquipmentSlot.FEET));
+    public static final Enchantment UNDYING = register("undying", new UndyingEnchantment());
 }

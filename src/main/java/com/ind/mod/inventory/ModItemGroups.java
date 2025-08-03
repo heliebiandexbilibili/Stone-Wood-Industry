@@ -30,6 +30,7 @@ public class ModItemGroups {
             .entries(((displayContext, entries) -> {
                 entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.HARDEN, 5)));
                 entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.SPEED, 5)));
+                entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.UNDYING, 10)));
             })).build());
     public static final ItemGroup STONE_WOOD_INDUSTRY_STONE = register("stone_wood_industry_stone", FabricItemGroup.builder()
             .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone").toTranslationKey()))
