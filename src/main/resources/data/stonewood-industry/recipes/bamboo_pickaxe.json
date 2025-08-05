@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:bamboo_pickaxe"
+  },
+  "show_notification": true
+}

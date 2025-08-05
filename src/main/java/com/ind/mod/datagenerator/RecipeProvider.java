@@ -1156,5 +1156,105 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .input('I', Items.STICK)
                 .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.BASALT))
                 .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "basalt_shovel"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.OAK_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.OAK_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.OAK_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "oak_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BIRCH_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.BIRCH_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.BIRCH_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "birch_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.SPRUCE_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.SPRUCE_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.SPRUCE_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "spruce_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.JUNGLE_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.JUNGLE_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.JUNGLE_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "jungle_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.DARK_OAK_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.OAK_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.OAK_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "dark_oak_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BAMBOO_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.BAMBOO_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.BAMBOO_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "bamboo_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.MANGROVE_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.MANGROVE_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.MANGROVE_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "mangrove_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.CHERRY_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.CHERRY_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.CHERRY_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "cherry_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.ACACIA_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.ACACIA_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.ACACIA_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "acacia_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.CRIMSON_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.CRIMSON_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.CRIMSON_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "crimson_pickaxe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.WARPED_PICKAXE)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ")
+                .input('#', Blocks.WARPED_PLANKS)
+                .input('I', Items.STICK)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.WARPED_PLANKS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "warped_pickaxe"));
+
+
     }
 }

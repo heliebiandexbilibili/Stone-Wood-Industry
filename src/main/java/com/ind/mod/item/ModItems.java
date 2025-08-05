@@ -165,4 +165,16 @@ public class ModItems {
     public static final Item BASALT_HOE = register("basalt_hoe", new HoeItem(ModToolMaterials.BASALT, -1, -2.0F, new FabricItemSettings()));
     public static final Item BASALT_AXE = register("basalt_axe", new AxeItem(ModToolMaterials.BASALT, 7, -3.2F, new FabricItemSettings()));
     public static final Item BASALT_SHOVEL = register("basalt_shovel", new ShovelItem(ModToolMaterials.BASALT, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final Item OAK_PICKAXE = register("oak_pickaxe", new OakPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item BIRCH_PICKAXE = register("birch_pickaxe", new BirchPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item SPRUCE_PICKAXE = register("spruce_pickaxe", new SprucePickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item JUNGLE_PICKAXE = register("jungle_pickaxe", new JunglePickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item ACACIA_PICKAXE = register("acacia_pickaxe", new AcaciaPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item DARK_OAK_PICKAXE = register("dark_oak_pickaxe", new DarkOakPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item MANGROVE_PICKAXE = register("mangrove_pickaxe", new MangrovePickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item CHERRY_PICKAXE = register("cherry_pickaxe", new CherryPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item BAMBOO_PICKAXE = register("bamboo_pickaxe", new BambooPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item CRIMSON_PICKAXE = register("crimson_pickaxe", new CrimsonPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+    public static final Item WARPED_PICKAXE = register("warped_pickaxe", new WarpedPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
+
 }

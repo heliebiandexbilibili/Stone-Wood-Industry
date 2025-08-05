@@ -173,5 +173,16 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.BASALT_SHOVEL, "Basalt Shovel");
         translationBuilder.add(ModItems.BASALT_SWORD, "Basalt Sword");
         translationBuilder.add(ModEnchantment.UNDYING, "Undying");
+        translationBuilder.add(ModItems.OAK_PICKAXE, "Oak Pickaxe");
+        translationBuilder.add(ModItems.BIRCH_PICKAXE, "Birch Pickaxe");
+        translationBuilder.add(ModItems.SPRUCE_PICKAXE, "Spruce Pickaxe");
+        translationBuilder.add(ModItems.JUNGLE_PICKAXE, "Jungle Pickaxe");
+        translationBuilder.add(ModItems.DARK_OAK_PICKAXE, "Dark Oak Pickaxe");
+        translationBuilder.add(ModItems.ACACIA_PICKAXE, "Acacia Pickaxe");
+        translationBuilder.add(ModItems.MANGROVE_PICKAXE, "Mangrove Pickaxe");
+        translationBuilder.add(ModItems.CHERRY_PICKAXE, "Cherry Pickaxe");
+        translationBuilder.add(ModItems.BAMBOO_PICKAXE, "Bamboo Pickaxe");
+        translationBuilder.add(ModItems.CRIMSON_PICKAXE, "Crimson Pickaxe");
+        translationBuilder.add(ModItems.WARPED_PICKAXE, "Warped Pickaxe");
     }
 }

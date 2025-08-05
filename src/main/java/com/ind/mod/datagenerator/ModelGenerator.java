@@ -158,5 +158,16 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BASALT_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BASALT_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BASALT_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.OAK_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BIRCH_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SPRUCE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.JUNGLE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DARK_OAK_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ACACIA_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MANGROVE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CHERRY_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRIMSON_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.WARPED_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BAMBOO_PICKAXE, Models.HANDHELD);
     }
 }
