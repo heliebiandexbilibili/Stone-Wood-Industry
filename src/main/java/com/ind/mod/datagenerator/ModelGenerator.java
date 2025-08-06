@@ -169,5 +169,6 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CRIMSON_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.WARPED_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BAMBOO_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ULTIMATE_WOOD_PICKAXE, Models.HANDHELD);
     }
 }

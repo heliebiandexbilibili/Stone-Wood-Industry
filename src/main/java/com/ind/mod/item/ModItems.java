@@ -176,5 +176,5 @@ public class ModItems {
     public static final Item BAMBOO_PICKAXE = register("bamboo_pickaxe", new BambooPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
     public static final Item CRIMSON_PICKAXE = register("crimson_pickaxe", new CrimsonPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
     public static final Item WARPED_PICKAXE = register("warped_pickaxe", new WarpedPickaxe(ModToolMaterials.OAK, 1, -2.8F, new FabricItemSettings()));
-
+    public static final Item ULTIMATE_WOOD_PICKAXE = register("ultimate_wood_pickaxe", new UltimateWoodPickaxe(ModToolMaterials.ULTIMATE_WOOD, 2, -1F, new FabricItemSettings()));
 }

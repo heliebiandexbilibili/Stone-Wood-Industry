@@ -184,5 +184,6 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.BAMBOO_PICKAXE, "竹镐");
         translationBuilder.add(ModItems.CRIMSON_PICKAXE, "绯红木镐");
         translationBuilder.add(ModItems.WARPED_PICKAXE, "诡异木镐");
+        translationBuilder.add(ModItems.ULTIMATE_WOOD_PICKAXE, "§6终极木镐");
     }
 }

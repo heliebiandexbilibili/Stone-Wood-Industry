@@ -11,6 +11,6 @@ public class AcaciaPickaxe extends WoodPickaxeItem{
 
     @Override
     public StatusEffect getMaxLevelEffect() {
-        return StatusEffects.HEALTH_BOOST;
+        return StatusEffects.INSTANT_HEALTH;
     }
 }

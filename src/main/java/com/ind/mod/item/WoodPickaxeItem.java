@@ -1,5 +1,6 @@
 package com.ind.mod.item;
 
+import com.ind.mod.StoneWoodIndustry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -9,10 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.SoundEvents;
@@ -20,6 +18,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class WoodPickaxeItem extends PickaxeItem {
@@ -36,6 +36,50 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             Blocks.PURPUR_BLOCK
     );
 
+    private static List<Item> REQUIRED_PICKAXES = null;
+
+
+    private static List<Item> getRequiredPickaxes() {
+        if (REQUIRED_PICKAXES == null) {
+            synchronized (WoodPickaxeItem.class) {
+                if (REQUIRED_PICKAXES == null) {
+                    List<Item> temp = new ArrayList<>();
+                    try {
+
+                        addPickaxeIfRegistered(temp, ModItems.OAK_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.SPRUCE_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.BIRCH_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.JUNGLE_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.ACACIA_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.MANGROVE_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.DARK_OAK_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.CHERRY_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.BAMBOO_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.CRIMSON_PICKAXE);
+                        addPickaxeIfRegistered(temp, ModItems.WARPED_PICKAXE);
+
+                        if (temp.isEmpty()) {
+                            StoneWoodIndustry.LOGGER.error("没有有效的镐子类型被注册！");
+                        }
+                    } catch (Exception e) {
+                        StoneWoodIndustry.LOGGER.error("初始化镐子列表失败", e);
+                    }
+                    REQUIRED_PICKAXES = Collections.unmodifiableList(temp);
+                }
+            }
+        }
+        return REQUIRED_PICKAXES;
+    }
+
+
+    private static void addPickaxeIfRegistered(List<Item> list, Item pickaxe) {
+        if (pickaxe != null) {
+            list.add(pickaxe);
+        } else {
+            StoneWoodIndustry.LOGGER.warn("检测到未注册的镐子: " + pickaxe);
+        }
+    }
+
     private static final int TOTAL_TIME_PER_LEVEL = 40;
 
     public WoodPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
@@ -51,19 +95,98 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+
         if (!world.isClient &&
                 selected &&
                 entity instanceof LivingEntity livingEntity &&
                 isMaxLevel(stack)) {
 
-            // 施加满级效果（固定1级，持续5秒）
             livingEntity.addStatusEffect(new StatusEffectInstance(
                     getMaxLevelEffect(),
-                    100, // 5秒 (20 ticks/秒)
-                    0,   // 效果等级I
-                    true, // 显示粒子
-                    false // 不显示图标（避免UI混乱）
+                    100,
+                    0,
+                    true,
+                    false
             ));
+        }
+        if (world.isClient || !(entity instanceof PlayerEntity)) return;
+
+        PlayerEntity player = (PlayerEntity) entity;
+
+        int craftableAmount = calculateCraftableAmount(player);
+
+        if (craftableAmount > 0) {
+            bulkCraftUltimatePickaxes(player, craftableAmount);
+        }
+    }
+    private int calculateCraftableAmount(PlayerEntity player) {
+
+        int netherStars = player.getInventory().count(Items.NETHER_STAR);
+
+        int minPickaxes = getRequiredPickaxes().stream()
+                .mapToInt(type -> countLevel10Pickaxes(player, type))
+                .min()
+                .orElse(0);
+
+        return Math.min(netherStars, minPickaxes);
+    }
+
+    private int countLevel10Pickaxes(PlayerEntity player, Item pickaxeType) {
+        int count = 0;
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            ItemStack stack = player.getInventory().getStack(i);
+            if (stack.isOf(pickaxeType) && isLevel10Pickaxe(stack)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private boolean isLevel10Pickaxe(ItemStack stack) {
+        return stack.hasNbt() &&
+                stack.getNbt().contains("lvl") &&
+                stack.getNbt().getInt("lvl") >= 10;
+    }
+
+    private void bulkCraftUltimatePickaxes(PlayerEntity player, int amount) {
+        removeMaterials(player, amount);
+        ItemStack result = new ItemStack(ModItems.ULTIMATE_WOOD_PICKAXE, amount);
+        if (!player.getInventory().insertStack(result)) {
+            player.dropItem(result, false);
+        }
+        player.sendMessage(Text.literal("§a成功合成终极木镐！"), false);
+        player.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+    }
+
+    private void removeMaterials(PlayerEntity player, int amount) {
+        removeItems(player, Items.NETHER_STAR, amount);
+
+        for (Item pickaxe : getRequiredPickaxes()) {
+            removeLevel10Pickaxes(player, pickaxe, amount);
+        }
+    }
+
+    private void removeItems(PlayerEntity player, Item item, int amount) {
+        int remaining = amount;
+        for (int i = 0; i < player.getInventory().size() && remaining > 0; i++) {
+            ItemStack stack = player.getInventory().getStack(i);
+            if (stack.isOf(item)) {
+                int remove = Math.min(stack.getCount(), remaining);
+                player.getInventory().removeStack(i, remove);
+                remaining -= remove;
+            }
+        }
+    }
+
+    private void removeLevel10Pickaxes(PlayerEntity player, Item pickaxe, int amount) {
+        int remaining = amount;
+        for (int i = 0; i < player.getInventory().size() && remaining > 0; i++) {
+            ItemStack stack = player.getInventory().getStack(i);
+            if (stack.isOf(pickaxe) && isLevel10Pickaxe(stack)) {
+                int remove = Math.min(stack.getCount(), remaining);
+                player.getInventory().removeStack(i, remove);
+                remaining -= remove;
+            }
         }
     }
 
@@ -93,7 +216,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
         if (currentLevel >= BLOCKS_PER_LEVEL.size()) {
             if (!stack.getNbt().getBoolean("hasNotifiedMaxLevel")) {
                 player.sendMessage(Text.of("§6✧ 你的镐子已经满级了！"), false);
-                stack.getNbt().putBoolean("hasNotifiedMaxLevel", true); // 标记已提醒
+                stack.getNbt().putBoolean("hasNotifiedMaxLevel", true);
             }
             return super.postMine(stack, world, state, pos, miner);
         }
@@ -117,7 +240,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             nbt.putInt("mt", 0);
             if(newLevel >= 10){
                 player.sendMessage(Text.of("§6✧ 你的镐子已经满级了！"), false);
-                nbt.putBoolean("hasNotifiedMaxLevel", true); // 标记已提醒
+                nbt.putBoolean("hasNotifiedMaxLevel", true);
                 return super.postMine(stack, world, state, pos, miner);
             }
             player.sendMessage(Text.of("§6✧ 镐子升级到 " + newLevel + " 级！§2(下一目标：" + BLOCKS_PER_LEVEL.get(newLevel).getName().getString() + ")"), false);
@@ -167,11 +290,9 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
         int level = getLevel(stack);
-
         if (level < BLOCKS_PER_LEVEL.size() && state.getBlock() == BLOCKS_PER_LEVEL.get(level)) {
             return ToolMaterials.WOOD.getMiningSpeedMultiplier();
         }
-
         return super.getMiningSpeedMultiplier(stack, state);
     }
 }

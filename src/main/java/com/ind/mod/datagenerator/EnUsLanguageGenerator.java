@@ -184,5 +184,6 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.BAMBOO_PICKAXE, "Bamboo Pickaxe");
         translationBuilder.add(ModItems.CRIMSON_PICKAXE, "Crimson Pickaxe");
         translationBuilder.add(ModItems.WARPED_PICKAXE, "Warped Pickaxe");
+        translationBuilder.add(ModItems.ULTIMATE_WOOD_PICKAXE, "§6Ultimate Wood Pickaxe");
     }
 }
