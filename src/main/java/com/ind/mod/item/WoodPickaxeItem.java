@@ -36,6 +36,18 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             Blocks.PURPUR_BLOCK
     );
 
+    private static final List<Integer> TOTAL_TIME_PER_LEVEL_LIST = List.of(
+            16,
+            64,
+            16+24,
+            32,
+            32,
+            32,
+            16,
+            32,
+            16
+    );
+
     private static List<Item> REQUIRED_PICKAXES = null;
 
 
@@ -80,7 +92,9 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
         }
     }
 
-    private static final int TOTAL_TIME_PER_LEVEL = 40;
+    public int getTotalTimePerLevel(int level){
+        return TOTAL_TIME_PER_LEVEL_LIST.get(level);
+    }
 
     public WoodPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
@@ -100,7 +114,6 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
                 selected &&
                 entity instanceof LivingEntity livingEntity &&
                 isMaxLevel(stack)) {
-
             livingEntity.addStatusEffect(new StatusEffectInstance(
                     getMaxLevelEffect(),
                     100,
@@ -230,11 +243,11 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
         int mineTime = nbt.getInt("mt") + 1;
         nbt.putInt("mt", mineTime);
         player.sendMessage(Text.literal(
-                "§a✔ 进度: §e" + mineTime + "§a/§b" + TOTAL_TIME_PER_LEVEL +
+                "§a✔ 进度: §e" + mineTime + "§a/§b" + getTotalTimePerLevel(currentLevel) +
                         " §7(§a" + requiredBlock.getName().getString() + "§7)"
         ), true);
 
-        if (mineTime >= TOTAL_TIME_PER_LEVEL) {
+        if (mineTime >= getTotalTimePerLevel(currentLevel)) {
             int newLevel = currentLevel + 1;
             nbt.putInt("lvl", newLevel);
             nbt.putInt("mt", 0);
@@ -279,7 +292,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             Block target = BLOCKS_PER_LEVEL.get(level);
             tooltip.add(Text.literal("§7现在等级: §e" + level + "§7/§b" + BLOCKS_PER_LEVEL.size()));
             tooltip.add(Text.literal("§7目标: §a" + target.getName().getString()));
-            tooltip.add(Text.literal("§7进度: §e" + stack.getOrCreateNbt().getInt("mt") + "§7/§b" + TOTAL_TIME_PER_LEVEL));
+            tooltip.add(Text.literal("§7进度: §e" + stack.getOrCreateNbt().getInt("mt") + "§7/§b" + getTotalTimePerLevel(level)));
         } else {
             tooltip.add(Text.literal("§6✦ 已满级"));
             tooltip.add(Text.literal("§2✦ 在主手时："));

@@ -19,7 +19,7 @@ public enum ModToolMaterials implements ToolMaterial {
     GRANITE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.GRANITE)),
     ANDESITE(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.ANDESITE)),
     BASALT(MiningLevels.STONE, 800, 8.0F, 0.0F, 10, ()->Ingredient.ofItems(Items.BASALT)),
-    OAK(MiningLevels.WOOD, 400, 4.0F, 0.0F, 5, ()->Ingredient.ofItems(Items.OAK_PLANKS)),
+    OAK(MiningLevels.WOOD, 500, 4.0F, 0.0F, 5, ()->Ingredient.ofItems(Items.OAK_PLANKS)),
     ULTIMATE_WOOD(MiningLevels.NETHERITE, 1600, 16.0F, 0.0F, 15, ()->Ingredient.ofItems(Items.OAK_PLANKS));
     private final int miningLevel;
     private final int itemDurability;

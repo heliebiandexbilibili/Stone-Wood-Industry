@@ -1196,7 +1196,7 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern(" I ")
                 .pattern(" I ")
-                .input('#', Blocks.OAK_PLANKS)
+                .input('#', Blocks.DARK_OAK_PLANKS)
                 .input('I', Items.STICK)
                 .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.OAK_PLANKS))
                 .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "dark_oak_pickaxe"));

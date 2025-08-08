@@ -23,7 +23,7 @@ public class UndyingEnchantment extends Enchantment {
     @Override
     public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
         if(!user.getWorld().isClient && !attacker.getWorld().isClient){
-            if(user.getHealth() <= user.getMaxHealth() * 0.6 && user instanceof PlayerEntity player){
+            if(user.getHealth() <= user.getMaxHealth() * 0.4 && user instanceof PlayerEntity player){
                 StoneWoodIndustry.LOGGER.info("onUserDamaged Start.(UndyingEnchantment.java)");
                 player.setHealth(user.getMaxHealth() / 2);
                 LightningHelper.spawnLightningAroundPlayer(player, 5, level);
