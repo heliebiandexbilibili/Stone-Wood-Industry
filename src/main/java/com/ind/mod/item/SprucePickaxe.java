@@ -1,8 +1,12 @@
 package com.ind.mod.item;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ToolMaterial;
+
+import java.util.List;
 
 public class SprucePickaxe extends WoodPickaxeItem{
     public SprucePickaxe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
@@ -12,5 +16,20 @@ public class SprucePickaxe extends WoodPickaxeItem{
     @Override
     public StatusEffect getMaxLevelEffect() {
         return StatusEffects.NIGHT_VISION;
+    }
+
+    @Override
+    public Block getBlockToMine() {
+        return Blocks.DIORITE;
+    }
+
+    @Override
+    public int getMaxLevel() {
+        return 3;
+    }
+
+    @Override
+    public List<Integer> getBaseTotalTime() {
+        return List.of(5, 10, 15);
     }
 }

@@ -3,7 +3,6 @@ package com.ind.mod.item;
 import com.ind.mod.StoneWoodIndustry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -21,33 +20,9 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public abstract class WoodPickaxeItem extends PickaxeItem {
-    private static final List<Block> BLOCKS_PER_LEVEL = List.of(
-            Blocks.STONE,
-            Blocks.COAL_ORE,
-            Blocks.IRON_ORE,
-            Blocks.CRIMSON_NYLIUM,
-            Blocks.WARPED_NYLIUM,
-            Blocks.BASALT,
-            Blocks.NETHER_BRICKS,
-            Blocks.BLACKSTONE,
-            Blocks.END_STONE,
-            Blocks.PURPUR_BLOCK
-    );
-
-    private static final List<Integer> TOTAL_TIME_PER_LEVEL_LIST = List.of(
-            16,
-            64,
-            16+24,
-            32,
-            32,
-            32,
-            16,
-            32,
-            16
-    );
-
     private static List<Item> REQUIRED_PICKAXES = null;
 
 
@@ -93,7 +68,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
     }
 
     public int getTotalTimePerLevel(int level){
-        return TOTAL_TIME_PER_LEVEL_LIST.get(level);
+        return getBaseTotalTime().get(level);
     }
 
     public WoodPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
@@ -203,20 +178,39 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
         }
     }
 
-    public static boolean isMaxLevel(ItemStack stack) {
-        return getLevel(stack) >= BLOCKS_PER_LEVEL.size();
+    public boolean isMaxLevel(ItemStack stack) {
+        return getLevel(stack) >= this.getMaxLevel();
     }
 
     public abstract StatusEffect getMaxLevelEffect();
 
-    private void initNbtIfNeeded(ItemStack stack) {
-        if (!stack.hasNbt() || !stack.getNbt().contains("lvl")) {
-            NbtCompound nbt = stack.getOrCreateNbt();
-            nbt.putInt("lvl", 0);
-            nbt.putInt("mt", 0);
-            nbt.putBoolean("hasNotifiedMaxLevel", false);
+    public abstract Block getBlockToMine();
+
+    public abstract int getMaxLevel();
+
+    public void putIntNbtIfNull(NbtCompound nbt, String key, int value){
+        if(!nbt.contains(key)){
+            nbt.putInt(key, value);
         }
     }
+
+    public void putBoolNbtIfNull(NbtCompound nbt, String key, boolean bool){
+        if(!nbt.contains(key)){
+            nbt.putBoolean(key, bool);
+        }
+    }
+
+    private void initNbtIfNeeded(ItemStack stack) {
+        if (!stack.hasNbt()) {
+            Random random = new Random();
+            NbtCompound nbt = stack.getOrCreateNbt();
+            putIntNbtIfNull(nbt, "lvl", 0);
+            putIntNbtIfNull(nbt, "mt", 0);
+            putBoolNbtIfNull(nbt, "hasNotifiedMaxLevel", false);
+        }
+    }
+
+    public abstract List<Integer> getBaseTotalTime();
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
@@ -226,7 +220,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
 
         initNbtIfNeeded(stack);
         int currentLevel = getLevel(stack);
-        if (currentLevel >= BLOCKS_PER_LEVEL.size()) {
+        if (currentLevel >= getMaxLevel()) {
             if (!stack.getNbt().getBoolean("hasNotifiedMaxLevel")) {
                 player.sendMessage(Text.of("§6✧ 你的镐子已经满级了！"), false);
                 stack.getNbt().putBoolean("hasNotifiedMaxLevel", true);
@@ -234,7 +228,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             return super.postMine(stack, world, state, pos, miner);
         }
 
-        Block requiredBlock = BLOCKS_PER_LEVEL.get(currentLevel);
+        Block requiredBlock = getBlockToMine();
         if (state.getBlock() != requiredBlock) {
             return super.postMine(stack, world, state, pos, miner);
         }
@@ -256,7 +250,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
                 nbt.putBoolean("hasNotifiedMaxLevel", true);
                 return super.postMine(stack, world, state, pos, miner);
             }
-            player.sendMessage(Text.of("§6✧ 镐子升级到 " + newLevel + " 级！§2(下一目标：" + BLOCKS_PER_LEVEL.get(newLevel).getName().getString() + ")"), false);
+            player.sendMessage(Text.of("§6✧ 镐子升级到 " + newLevel + " 级！"), false);
             player.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
             player.addExperience(newLevel * 10);
         }
@@ -275,7 +269,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
     @Override
     public boolean isSuitableFor(ItemStack stack, BlockState state) {
         int level = getLevel(stack);
-        if (level < BLOCKS_PER_LEVEL.size() && state.getBlock() == BLOCKS_PER_LEVEL.get(level)) {
+        if (level < getMaxLevel() && state.getBlock() == getBlockToMine()) {
             return true;
         }
         if (level >= 3) {
@@ -288,9 +282,9 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         int level = getLevel(stack);
-        if (level < BLOCKS_PER_LEVEL.size()) {
-            Block target = BLOCKS_PER_LEVEL.get(level);
-            tooltip.add(Text.literal("§7现在等级: §e" + level + "§7/§b" + BLOCKS_PER_LEVEL.size()));
+        if (level < getMaxLevel()) {
+            Block target = getBlockToMine();
+            tooltip.add(Text.literal("§7现在等级: §e" + level + "§7/§b" + getMaxLevel()));
             tooltip.add(Text.literal("§7目标: §a" + target.getName().getString()));
             tooltip.add(Text.literal("§7进度: §e" + stack.getOrCreateNbt().getInt("mt") + "§7/§b" + getTotalTimePerLevel(level)));
         } else {
@@ -303,7 +297,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
         int level = getLevel(stack);
-        if (level < BLOCKS_PER_LEVEL.size() && state.getBlock() == BLOCKS_PER_LEVEL.get(level)) {
+        if (level < getMaxLevel() && state.getBlock() == getBlockToMine()) {
             return ToolMaterials.WOOD.getMiningSpeedMultiplier();
         }
         return super.getMiningSpeedMultiplier(stack, state);

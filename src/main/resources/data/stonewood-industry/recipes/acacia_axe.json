@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:acacia_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "## ",
+    "#I ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:acacia_axe"
+  },
+  "show_notification": true
+}

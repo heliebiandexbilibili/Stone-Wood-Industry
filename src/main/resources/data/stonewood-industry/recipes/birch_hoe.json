@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:birch_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "## ",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:birch_hoe"
+  },
+  "show_notification": true
+}

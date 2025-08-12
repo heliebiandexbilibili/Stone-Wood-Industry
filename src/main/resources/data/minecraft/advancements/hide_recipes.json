@@ -1,0 +1,11 @@
+{
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [["impossible"]],
+  "rewards": {
+    "recipes": ["minecraft:wooden_pickaxe", "minecraft:wooden_hoe", "minecraft:wooden_sword", "minecraft:wooden_shovel", "minecraft:wooden_axe"]
+  }
+}

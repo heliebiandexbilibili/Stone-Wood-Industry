@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " # ",
+    " # ",
+    " I "
+  ],
+  "result": {
+    "item": "stonewood-industry:dark_oak_sword"
+  },
+  "show_notification": true
+}
