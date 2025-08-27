@@ -11,6 +11,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Consumer;
@@ -1608,6 +1609,41 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.WARPED_PLANKS))
                 .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "warped_shovel"));
 
-
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_PETRIFIED_OAK_LOG)
+                .pattern("#%")
+                .pattern("#%")
+                .input('#', Blocks.STRIPPED_OAK_LOG)
+                .input('%', ItemTags.STONE_TOOL_MATERIALS)
+                .criterion("has_item", RecipeProvider.conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "stripped_petrified_oak_log"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PETRIFIED_OAK_LOG)
+                .pattern("#%")
+                .pattern("#%")
+                .input('#', Blocks.OAK_LOG)
+                .input('%', ItemTags.STONE_TOOL_MATERIALS)
+                .criterion("has_item", RecipeProvider.conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "petrified_oak_log"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PETRIFIED_OAK_PLANKS)
+                .pattern("#%")
+                .pattern("#%")
+                .input('#', Blocks.OAK_PLANKS)
+                .input('%', ItemTags.STONE_TOOL_MATERIALS)
+                .criterion("has_item", RecipeProvider.conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "petrified_oak_planks_1"));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PETRIFIED_OAK_PLANKS, 4)
+                .input(ModBlocks.PETRIFIED_OAK_LOG)
+                .criterion("has_item", RecipeProvider.conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "petrified_oak_planks_2"));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PETRIFIED_OAK_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_PETRIFIED_OAK_LOG)
+                .criterion("has_item", RecipeProvider.conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "petrified_oak_planks_3"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PETRIFIED_OAK_STAIRS, 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .input('#', ModBlocks.PETRIFIED_OAK_PLANKS)
+                .criterion("has_item", RecipeProvider.conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter, Identifier.of(StoneWoodIndustry.MOD_ID, "petrified_oak_stairs"));
     }
 }

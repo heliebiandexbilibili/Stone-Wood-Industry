@@ -31,6 +31,7 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.SMOOTH_STONE_HOE, "Smooth Stone Hoe");
         translationBuilder.add(ModItems.SMOOTH_STONE_SHOVEL, "Smooth Stone Shovel");
         translationBuilder.add(ModItems.SMOOTH_STONE_SWORD, "Smooth Stone Sword");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_blocks"), "Stone Wood Industry: Blocks");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone"), "Stone Wood Industry: Stone Products");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood"), "Stone Wood Industry: Wood Products");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_enchant"), "Stone Wood Industry: Enchantment");
@@ -229,5 +230,10 @@ public class EnUsLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.WARPED_SHOVEL, "Warped Shovel");
         translationBuilder.add(ModItems.WARPED_HOE, "Warped Hoe");
         translationBuilder.add(ModItems.ULTIMATE_WOOD_PICKAXE, "§6Ultimate Wood Pickaxe");
+        translationBuilder.add(ModBlocks.STRIPPED_PETRIFIED_OAK_LOG, "Stripped Petrified Oak Log");
+        translationBuilder.add(ModBlocks.PETRIFIED_OAK_LOG, "Petrified Oak Log");
+        translationBuilder.add(ModBlocks.PETRIFIED_OAK_PLANKS, "Petrified Oak Planks");
+        translationBuilder.add(ModBlocks.PETRIFIED_OAK_STAIRS, "Petrified Oak Stairs");
+        translationBuilder.add(ModEnchantment.EXCAVATION_RANGE, "Excavation Range");
     }
 }

@@ -31,6 +31,7 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.SMOOTH_STONE_HOE, "平滑石锄");
         translationBuilder.add(ModItems.SMOOTH_STONE_SHOVEL, "平滑石铲子");
         translationBuilder.add(ModItems.SMOOTH_STONE_SWORD, "平滑石剑");
+        translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_blocks"), "石木工艺：方块");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone"), "石木工艺：石头制品");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood"), "石木工艺：木头制品");
         translationBuilder.add(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_enchant"), "石木工艺：附魔");
@@ -229,5 +230,10 @@ public class ZhCnLanguageGenerator extends FabricLanguageProvider {
         translationBuilder.add(ModItems.WARPED_SHOVEL, "诡异木铲");
         translationBuilder.add(ModItems.WARPED_HOE, "诡异木锄");
         translationBuilder.add(ModItems.ULTIMATE_WOOD_PICKAXE, "§6终极木镐");
+        translationBuilder.add(ModBlocks.STRIPPED_PETRIFIED_OAK_LOG, "去皮石化橡木原木");
+        translationBuilder.add(ModBlocks.PETRIFIED_OAK_LOG, "石化橡木原木");
+        translationBuilder.add(ModBlocks.PETRIFIED_OAK_PLANKS, "石化橡木木板");
+        translationBuilder.add(ModBlocks.PETRIFIED_OAK_STAIRS, "石化橡木楼梯");
+        translationBuilder.add(ModEnchantment.EXCAVATION_RANGE, "范围提升");
     }
 }

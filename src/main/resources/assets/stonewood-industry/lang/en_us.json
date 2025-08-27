@@ -1,9 +1,14 @@
 {
   "block.stonewood-industry.obsidian_slab": "Obsidian Slab",
   "block.stonewood-industry.obsidian_stairs": "Obsidian Stairs",
+  "block.stonewood-industry.petrified_oak_log": "Petrified Oak Log",
+  "block.stonewood-industry.petrified_oak_planks": "Petrified Oak Planks",
+  "block.stonewood-industry.petrified_oak_stairs": "Petrified Oak Stairs",
   "block.stonewood-industry.smooth_stone_button": "Smooth Stone Button",
   "block.stonewood-industry.smooth_stone_pressure_plate": "Smooth Stone Pressure Plate",
   "block.stonewood-industry.smooth_stone_stairs": "Smooth Stone Stairs",
+  "block.stonewood-industry.stripped_petrified_oak_log": "Stripped Petrified Oak Log",
+  "enchantment.stonewood-industry.excavation_range": "Excavation Range",
   "enchantment.stonewood-industry.harden": "Harden",
   "enchantment.stonewood-industry.speed": "Speed",
   "enchantment.stonewood-industry.undying": "Undying",
@@ -210,6 +215,7 @@
   "item.stonewood-industry.warped_pickaxe": "Warped Pickaxe",
   "item.stonewood-industry.warped_shovel": "Warped Shovel",
   "item.stonewood-industry.warped_sword": "Warped Sword",
+  "stonewood-industry.stone_wood_industry_blocks": "Stone Wood Industry: Blocks",
   "stonewood-industry.stone_wood_industry_enchant": "Stone Wood Industry: Enchantment",
   "stonewood-industry.stone_wood_industry_stone": "Stone Wood Industry: Stone Products",
   "stonewood-industry.stone_wood_industry_wood": "Stone Wood Industry: Wood Products"

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:petrified_oak_stairs",
+    "minecraft:petrified_oak_planks",
+    "minecraft:stripped_petrified_oak_log",
+    "minecraft:petrified_oak_log"
+  ]
+}

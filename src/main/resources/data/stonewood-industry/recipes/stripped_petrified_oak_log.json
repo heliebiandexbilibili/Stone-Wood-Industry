@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_oak_log"
+    },
+    "%": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    "#%",
+    "#%"
+  ],
+  "result": {
+    "item": "stonewood-industry:stripped_petrified_oak_log"
+  },
+  "show_notification": true
+}

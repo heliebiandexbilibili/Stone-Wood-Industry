@@ -24,6 +24,21 @@ public class ModItemGroups {
     public static ItemGroup register(String name, ItemGroup itemGroup){
         return Registry.register(Registries.ITEM_GROUP, new Identifier(StoneWoodIndustry.MOD_ID, name), itemGroup);
     }
+    public static final ItemGroup STONE_WOOD_INDUSTRY_BLOCKS = register("stone_wood_industry_blocks", FabricItemGroup.builder()
+            .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_blocks").toTranslationKey()))
+            .icon(()->new ItemStack(ModBlocks.SMOOTH_STONE_STAIRS))
+            .entries(((displayContext, entries) -> {
+                entries.add(ModBlocks.OBSIDIAN_STAIRS);
+                entries.add(ModBlocks.OBSIDIAN_SLAB);
+                entries.add(ModBlocks.SMOOTH_STONE_STAIRS);
+                entries.add(ModBlocks.SMOOTH_STONE_BUTTON);
+                entries.add(ModBlocks.SMOOTH_STONE_PRESSURE_PLATE);
+                entries.add(ModBlocks.PETRIFIED_OAK_LOG);
+                entries.add(ModBlocks.STRIPPED_PETRIFIED_OAK_LOG);
+                entries.add(ModBlocks.PETRIFIED_OAK_PLANKS);
+                entries.add(ModBlocks.PETRIFIED_OAK_STAIRS);
+                entries.add(Blocks.PETRIFIED_OAK_SLAB);
+            })).build());
     public static final ItemGroup STONE_WOOD_INDUSTRY_ENCHANTMENT = register("stone_wood_industry_enchant", FabricItemGroup.builder()
             .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_enchant").toTranslationKey()))
             .icon(()->new ItemStack(Items.ENCHANTED_BOOK))
@@ -31,6 +46,7 @@ public class ModItemGroups {
                 entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.HARDEN, 5)));
                 entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.SPEED, 5)));
                 entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.UNDYING, 10)));
+                entries.add(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantment.EXCAVATION_RANGE, 5)));
             })).build());
     public static final ItemGroup STONE_WOOD_INDUSTRY_STONE = register("stone_wood_industry_stone", FabricItemGroup.builder()
             .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_stone").toTranslationKey()))
@@ -144,17 +160,10 @@ public class ModItemGroups {
                 entries.add(ModItems.OBSIDIAN_PICKAXE);
                 entries.add(ModItems.OBSIDIAN_AXE);
                 entries.add(ModItems.OBSIDIAN_HOE);
-                entries.add(Blocks.SMOOTH_STONE);
-                entries.add(Blocks.SMOOTH_STONE_SLAB);
-                entries.add(ModBlocks.SMOOTH_STONE_STAIRS);
-                entries.add(ModBlocks.SMOOTH_STONE_PRESSURE_PLATE);
-                entries.add(ModBlocks.SMOOTH_STONE_BUTTON);
-                entries.add(ModBlocks.OBSIDIAN_SLAB);
-                entries.add(ModBlocks.OBSIDIAN_STAIRS);
             })).build());
     public static final ItemGroup STONE_WOOD_INDUSTRY_WOOD = register("stone_wood_industry_wood", FabricItemGroup.builder()
             .displayName(Text.translatable(new Identifier(StoneWoodIndustry.MOD_ID, "stone_wood_industry_wood").toTranslationKey()))
-            .icon(()->new ItemStack(Items.OAK_LOG))
+            .icon(()->new ItemStack(ModItems.OAK_HELMET))
             .entries(((displayContext, entries) -> {
                 entries.add(ModItems.OAK_HELMET);
                 entries.add(ModItems.OAK_CHESTPLATE);
@@ -256,4 +265,5 @@ public class ModItemGroups {
                 entries.add(ModItems.CRIMSON_HOE);
                 entries.add(ModItems.CRIMSON_AXE);
             })).build());
+
 }

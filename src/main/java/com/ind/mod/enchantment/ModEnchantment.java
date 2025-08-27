@@ -19,4 +19,5 @@ public class ModEnchantment {
     public static final Enchantment HARDEN = register("harden", new HardenEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, EquipmentSlot.values()));
     public static final Enchantment SPEED = register("speed", new SpeedEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR, EquipmentSlot.FEET));
     public static final Enchantment UNDYING = register("undying", new UndyingEnchantment());
+    public static final Enchantment EXCAVATION_RANGE = register("excavation_range", new ExcavationRangeEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, EquipmentSlot.MAINHAND));
 }

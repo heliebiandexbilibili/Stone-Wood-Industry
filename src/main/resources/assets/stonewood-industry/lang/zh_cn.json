@@ -1,9 +1,14 @@
 {
   "block.stonewood-industry.obsidian_slab": "黑曜石半砖",
   "block.stonewood-industry.obsidian_stairs": "黑曜石楼梯",
+  "block.stonewood-industry.petrified_oak_log": "石化橡木原木",
+  "block.stonewood-industry.petrified_oak_planks": "石化橡木木板",
+  "block.stonewood-industry.petrified_oak_stairs": "石化橡木楼梯",
   "block.stonewood-industry.smooth_stone_button": "平滑石按钮",
   "block.stonewood-industry.smooth_stone_pressure_plate": "平滑石压力板",
   "block.stonewood-industry.smooth_stone_stairs": "平滑石楼梯",
+  "block.stonewood-industry.stripped_petrified_oak_log": "去皮石化橡木原木",
+  "enchantment.stonewood-industry.excavation_range": "范围提升",
   "enchantment.stonewood-industry.harden": "硬化",
   "enchantment.stonewood-industry.speed": "快跑",
   "enchantment.stonewood-industry.undying": "不死",
@@ -210,6 +215,7 @@
   "item.stonewood-industry.warped_pickaxe": "诡异木镐",
   "item.stonewood-industry.warped_shovel": "诡异木铲",
   "item.stonewood-industry.warped_sword": "诡异木剑",
+  "stonewood-industry.stone_wood_industry_blocks": "石木工艺：方块",
   "stonewood-industry.stone_wood_industry_enchant": "石木工艺：附魔",
   "stonewood-industry.stone_wood_industry_stone": "石木工艺：石头制品",
   "stonewood-industry.stone_wood_industry_wood": "石木工艺：木头制品"

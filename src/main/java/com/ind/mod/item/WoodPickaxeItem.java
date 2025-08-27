@@ -1,9 +1,12 @@
 package com.ind.mod.item;
 
 import com.ind.mod.StoneWoodIndustry;
+import com.ind.mod.enchantment.ModEnchantment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -11,20 +14,31 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public abstract class WoodPickaxeItem extends PickaxeItem {
-    private static List<Item> REQUIRED_PICKAXES = null;
-
+    private static volatile List<Item> REQUIRED_PICKAXES = null;
+    // 修改为粒子效果的伤害范围
+    private static final int DAMAGE_RANGE = 20;
+    private static final float DAMAGE_AMOUNT = 10.0f;
 
     private static List<Item> getRequiredPickaxes() {
         if (REQUIRED_PICKAXES == null) {
@@ -32,7 +46,6 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
                 if (REQUIRED_PICKAXES == null) {
                     List<Item> temp = new ArrayList<>();
                     try {
-
                         addPickaxeIfRegistered(temp, ModItems.OAK_PICKAXE);
                         addPickaxeIfRegistered(temp, ModItems.SPRUCE_PICKAXE);
                         addPickaxeIfRegistered(temp, ModItems.BIRCH_PICKAXE);
@@ -58,7 +71,6 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
         return REQUIRED_PICKAXES;
     }
 
-
     private static void addPickaxeIfRegistered(List<Item> list, Item pickaxe) {
         if (pickaxe != null) {
             list.add(pickaxe);
@@ -83,8 +95,219 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack stack = user.getStackInHand(hand);
+        int pickaxeLevel = getLevel(stack);
 
+        // 检查是否潜行并右键
+        if (user.isSneaking()) {
+            // 0级不破坏方块
+            if (pickaxeLevel == 0) {
+                return TypedActionResult.fail(stack);
+            }
+
+            // 发射粒子效果并对沿途实体造成伤害
+            if (!world.isClient) {
+                HitResult result = shootParticleBeam((ServerWorld) world, user, stack, DAMAGE_RANGE);
+                if(result.getType() == HitResult.Type.BLOCK && canMineBlock(world, new BlockPos((int) result.getPos().x, (int) result.getPos().y, (int) result.getPos().z), user)) stack.damage(5, user, (p) -> p.sendToolBreakStatus(hand));
+                user.getItemCooldownManager().set(this, 20 - EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack)); // 1秒冷却
+
+                // 播放发射声音
+                user.playSound(SoundEvents.ENTITY_ENDER_DRAGON_SHOOT, 1.0F, 1.0F);
+            } else {
+                // 客户端也播放声音
+                user.playSound(SoundEvents.ENTITY_ENDER_DRAGON_SHOOT, 1.0F, 1.0F);
+            }
+            return TypedActionResult.success(stack);
+        }
+
+        return TypedActionResult.pass(stack);
+    }
+
+    private HitResult shootParticleBeam(ServerWorld world, PlayerEntity player, ItemStack pickaxeStack, int range) {
+        Vec3d startPos = player.getEyePos();
+        Vec3d lookVec = player.getRotationVec(1.0F);
+        Vec3d endPos = startPos.add(lookVec.multiply(range));
+
+        // 射线检测，找出击中的方块
+        BlockHitResult hitResult = world.raycast(new RaycastContext(
+                startPos, endPos,
+                RaycastContext.ShapeType.COLLIDER,
+                RaycastContext.FluidHandling.NONE,
+                player
+        ));
+
+        // 创建粒子效果路径
+        createParticlePath(world, startPos, hitResult.getPos());
+
+        // 对路径上的所有实体造成伤害
+        damageEntitiesAlongPath(world, player, startPos, hitResult.getPos());
+
+        // 破坏路径上的方块（根据镐子等级）
+        if (hitResult.getType() == HitResult.Type.BLOCK) {
+            destroyBlocksAlongPath(world, player, pickaxeStack, hitResult);
+        }
+
+        return hitResult;
+    }
+
+    private void destroyBlocksAlongPath(ServerWorld world, PlayerEntity player, ItemStack pickaxeStack, BlockHitResult hitResult) {
+        int pickaxeLevel = getLevel(pickaxeStack);
+        if (pickaxeLevel <= 0) return; // 0级不破坏方块
+
+        Vec3d lookVec = player.getRotationVec(1.0F);
+        BlockPos hitPos = hitResult.getBlockPos();
+
+        // 根据镐子等级决定向前挖掘的层数
+
+        // 沿着视线方向向前挖掘方块
+        destroyBlocksAlongSightLine(world, player, hitPos, lookVec, pickaxeLevel);
+    }
+
+    private void destroyBlocksAlongSightLine(ServerWorld world, PlayerEntity player, BlockPos startPos, Vec3d lookVec, int layers) {
+        // 横向3x3范围
+
+        // 将视线向量转换为主要方向（用于确定横向偏移）
+        Direction primaryDirection = Direction.getFacing(lookVec.x, lookVec.y, lookVec.z);
+
+        for (int distance = 0; distance <= layers - 1; distance++) {
+            // 计算当前距离的目标中心点
+            Vec3d centerOffset = lookVec.multiply(distance);
+            BlockPos centerPos = startPos.add(
+                    (int) Math.round(centerOffset.x),
+                    (int) Math.round(centerOffset.y),
+                    (int) Math.round(centerOffset.z)
+            );
+
+            // 破坏当前距离的3x3区域
+            destroyNxNArea(world, player, centerPos, primaryDirection, 3 + EnchantmentHelper.getLevel(ModEnchantment.EXCAVATION_RANGE, player.getMainHandStack()));
+        }
+    }
+
+    private void destroyNxNArea(ServerWorld world, PlayerEntity player, BlockPos centerPos, Direction direction, int width) {
+        // 根据主要方向确定横向平面
+        for (int x = -width / 2; x <= width / 2; x++) {
+            for (int y = -width / 2; y <= width / 2; y++) {
+                BlockPos targetPos = calculateLateralOffset(centerPos, direction, x, y);
+
+                if (canMineBlock(world, targetPos, player)) {
+                    // 破坏方块并掉落物品
+                    world.breakBlock(targetPos, true, player);
+
+                    // 添加破坏粒子效果
+                    world.spawnParticles(
+                            ParticleTypes.CRIT,
+                            targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5,
+                            3,
+                            0.2, 0.2, 0.2,
+                            0.05
+                    );
+                }
+            }
+        }
+    }
+
+    private BlockPos calculateLateralOffset(BlockPos center, Direction direction, int xOffset, int yOffset) {
+        // 根据主要方向计算横向偏移
+        return switch (direction) {
+            case UP, DOWN -> center.add(xOffset, 0, yOffset);
+            case NORTH, SOUTH -> center.add(xOffset, yOffset, 0);
+            case EAST, WEST -> center.add(0, yOffset, xOffset);
+        };
+    }
+
+    private boolean canMineBlock(World world, BlockPos pos, PlayerEntity player) {
+        BlockState state = world.getBlockState(pos);
+        return (!state.isIn(BlockTags.NEEDS_DIAMOND_TOOL) && !state.isIn(BlockTags.NEEDS_IRON_TOOL) && !state.isIn(BlockTags.NEEDS_STONE_TOOL) && state.getBlock().getHardness() >= 0) || player.isCreative();
+    }
+
+
+    private void createParticlePath(ServerWorld world, Vec3d start, Vec3d end) {
+        double distance = start.distanceTo(end);
+        int particleCount = (int) (distance * 2);
+
+        for (int i = 0; i < particleCount; i++) {
+            double progress = (double) i / particleCount;
+            Vec3d particlePos = start.lerp(end, progress);
+
+            // 创建巨大的粒子效果
+            world.spawnParticles(
+                    ParticleTypes.DRAGON_BREATH,
+                    particlePos.x, particlePos.y, particlePos.z,
+                    5,
+                    0.5, 0.5, 0.5,
+                    0.1
+            );
+
+            // 添加额外的粒子效果增强视觉效果
+            world.spawnParticles(
+                    ParticleTypes.ELECTRIC_SPARK,
+                    particlePos.x, particlePos.y, particlePos.z,
+                    3,
+                    0.3, 0.3, 0.3,
+                    0.05
+            );
+        }
+    }
+
+    private void damageEntitiesAlongPath(ServerWorld world, PlayerEntity player, Vec3d start, Vec3d end) {
+        // 计算路径的边界框
+        Box pathBox = new Box(start, end).expand(2.0);
+
+        // 获取路径上的所有实体
+        List<LivingEntity> entities = world.getEntitiesByClass(
+                LivingEntity.class,
+                pathBox,
+                entity -> entity != player && entity.isAlive()
+        );
+
+        for (LivingEntity entity : entities) {
+            // 检查实体是否在路径附近
+            if (isEntityNearPath(entity, start, end, 2.0)) {
+                entity.damage(player.getDamageSources().playerAttack(player), DAMAGE_AMOUNT);
+
+                // 添加击退效果
+                Vec3d knockbackDir = entity.getPos().subtract(player.getPos()).normalize();
+                entity.addVelocity(knockbackDir.x * 0.5, 0.5, knockbackDir.z * 0.5);
+
+                // 添加粒子效果在命中点
+                world.spawnParticles(
+                        ParticleTypes.EXPLOSION,
+                        entity.getX(), entity.getY() + entity.getHeight() / 2, entity.getZ(),
+                        3,
+                        0.5, 0.5, 0.5,
+                        0.1
+                );
+            }
+        }
+    }
+
+    private boolean isEntityNearPath(LivingEntity entity, Vec3d start, Vec3d end, double radius) {
+        Vec3d entityPos = entity.getPos().add(0, entity.getHeight() / 2, 0);
+        return distanceToLineSegment(entityPos, start, end) <= radius;
+    }
+
+    private double distanceToLineSegment(Vec3d point, Vec3d lineStart, Vec3d lineEnd) {
+        Vec3d lineVec = lineEnd.subtract(lineStart);
+        double lineLength = lineVec.length();
+        Vec3d lineDir = lineVec.normalize();
+
+        Vec3d pointVec = point.subtract(lineStart);
+        double projection = pointVec.dotProduct(lineDir);
+
+        if (projection < 0) {
+            return point.distanceTo(lineStart);
+        } else if (projection > lineLength) {
+            return point.distanceTo(lineEnd);
+        } else {
+            Vec3d closestPoint = lineStart.add(lineDir.multiply(projection));
+            return point.distanceTo(closestPoint);
+        }
+    }
+
+    // 以下保持原有的所有方法不变...
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (!world.isClient &&
                 selected &&
                 entity instanceof LivingEntity livingEntity &&
@@ -97,9 +320,7 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
                     false
             ));
         }
-        if (world.isClient || !(entity instanceof PlayerEntity)) return;
-
-        PlayerEntity player = (PlayerEntity) entity;
+        if (world.isClient || !(entity instanceof PlayerEntity player)) return;
 
         int craftableAmount = calculateCraftableAmount(player);
 
@@ -107,8 +328,8 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             bulkCraftUltimatePickaxes(player, craftableAmount);
         }
     }
-    private int calculateCraftableAmount(PlayerEntity player) {
 
+    private int calculateCraftableAmount(PlayerEntity player) {
         int netherStars = player.getInventory().count(Items.NETHER_STAR);
 
         int minPickaxes = getRequiredPickaxes().stream()
@@ -202,7 +423,6 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
 
     private void initNbtIfNeeded(ItemStack stack) {
         if (!stack.hasNbt()) {
-            Random random = new Random();
             NbtCompound nbt = stack.getOrCreateNbt();
             putIntNbtIfNull(nbt, "lvl", 0);
             putIntNbtIfNull(nbt, "mt", 0);
@@ -291,6 +511,14 @@ public abstract class WoodPickaxeItem extends PickaxeItem {
             tooltip.add(Text.literal("§6✦ 已满级"));
             tooltip.add(Text.literal("§2✦ 在主手时："));
             tooltip.add(Text.literal("§7   获得" + getMaxLevelEffect().getName().getString() + "I效果"));
+        }
+
+        // 修改功能提示
+        tooltip.add(Text.literal("§5✦ 潜行右键："));
+        tooltip.add(Text.literal("§7   发射能量波对前方" + DAMAGE_RANGE + "格内实体造成" + DAMAGE_AMOUNT + "点伤害"));
+        tooltip.add(Text.literal("§7   破坏前方" + (level > 0 ? level : "0") + "层" + (3 + EnchantmentHelper.getLevel(ModEnchantment.EXCAVATION_RANGE, stack)) + "x" + (3 + EnchantmentHelper.getLevel(ModEnchantment.EXCAVATION_RANGE, stack)) + "范围的方块"));
+        if (level == 0) {
+            tooltip.add(Text.literal("§c   需要至少1级才能破坏方块"));
         }
     }
 
